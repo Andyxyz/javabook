@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:sourceDocument="C:\Users\Andrew\Documents\Framemaker\Chapter One.fm">
+    <head>
+        <link href="../Resources/Stylesheets/Chapter One.css" rel="stylesheet" />
+    </head>
+    <body>
+        <p>literals</p>
+        <p>Values may also be declared without variables, as <span class="Emphasis">literals</span> or <span class="Emphasis">constants</span>. Such values do not have to be declared and initialized, but if they are not, they will only be recognized if they are part of an expression. An expression is a statement which evaluates to a specific value. You can write:</p>
+        <p>int number;</p>
+        <p>number = 18 + 3;</p>
+        <p>&#160;</p>
+        <p>Without declaring variables for <span class="code">18</span> and <span class="code">3</span>. However, you cannot simply declare an integer or another primitive value, unless you use a variable. The statement:</p>
+        <p>int = 21;</p>
+        <p>&#160;</p>
+        <p>is not legal. Java will construe it as a variable declaration without a name instead of recognizing it as a literal.</p>
+        <p>By the same token:</p>
+        <p>boolean = true;</p>
+        <p>&#160;</p>
+        <p>Is not a legal statement. Instead, you must write:</p>
+        <p>boolean isSwitchedOn = true;</p>
+        <p>&#160;</p>
+        <p>Care must be exercised in the use of literals. Literals can be difficult to parse for somebody else reading your code. In the above statement, what do the literal values <span class="code">18</span> and <span class="code">3</span> correspond to? Let’s look at them in another context.</p>
+        <p>int diameter = 18 + 3;</p>
+        <p>&#160;</p>
+        <p>If instead of a book, this were an architectural program, suddenly those “magic numbers” would begin looking fishier. Maybe they are dimensions? But if so, dimensions of what? Here’s another, more bulletproof way to write that code;</p>
+        <p>int totalDiameter;</p>
+        <p>int innerDiameter = 3;</p>
+        <p>int outerDiameter = 18;</p>
+        <p>&#160;</p>
+        <p>totalDiameter = innerDiameter + outerDiameter;</p>
+        <p>&#160;</p>
+        <p>The variables are much clearer than the “magic numbers,” and code of any sophistication uses variables wherever possible.</p>
+        <p>A best practice with regard to the use of literals is in the case of <span class="Emphasis">constants</span>. Constants should be declared using the <span class="Emphasis">final</span> keyword. Constant names are by convention capitalized. Variables declared as final cannot be changed without changing the statement containing the final modifier. A constant would be written as follows.</p>
+        <p style="font-family: Inconsolata;font-weight: normal;font-style: normal;font-size: 12pt;letter-spacing: 0em;color: #000000;text-decoration: none;"><span class="code">final int TOTAL_DIAMETER = 21;</span>
+        </p>
+        <p>One additional note concerning literals. For primitives of type <span class="code">char</span>, literals must be enclosed within single quotes. We’ve seen this already; let’s make it explicit.</p>
+        <p style="font-family: Inconsolata;font-weight: normal;font-style: normal;font-size: 12pt;letter-spacing: 0em;color: #000000;text-decoration: none;"><span class="code">char character = 'u';</span>
+        </p>
+        <p>&#160;</p>
+        <p>&#160;</p>
+        <p>&#160;</p>
+        <p>Mathematical Operations</p>
+        <p>Java uses the ordinary symbols for addition, subtraction, multiplication, and division: +, -, *, and /. To this it adds a fifth operation, %, for modulus, which is simply the remainder of integer division. The order of operations is the same as that used in arithmetic, so mixed expressions evaluate multiplication and division before addition and subtraction. Parentheses can also be used to control order of operations in the usual fashion. The remainder of this section is devoted to the less-intuitive aspects of math in Java.</p>
+    </body>
+</html>

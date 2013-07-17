@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/Stylesheets/Chapter One.css" rel="stylesheet" />
+    </head>
+    <body><pre>additional arithmetic operators</pre>
+        <p>There are some operations performed so frequently that Java provides shorthand notation. It is very common to add or subtract one from a variable. This can be written as ++, the <i>increment operator</i>, or --, the <i>decrement operator. </i>The increment and decrement operators may be written as either a <i>prefix</i>, before the variable, or a <i>postfix</i>, after the variable. Caution: the results are not always the same. This is confusing, so sit tight.</p>
+        <blockquote>int x = 1;</blockquote>
+        <blockquote>int y;</blockquote>
+        <blockquote>int y = ++x;</blockquote>
+        <blockquote>int y = x++;</blockquote>
+        <p>Believe it or not, in the first expression y is equal to 2 and x is equal to 2; in the second, y is equal to 1, while x is still equal to 2! You read that right; 1 = 2 in the second expression, or so it would appear. <i>Only that is not the case.</i> We know by now that the equals sign in this context is initializing the variable y, not an equals sign.</p>
+        <p>It works this way because the assignment to <code>y </code>in the first expression happens <i>after</i> <code>x</code> is incremented; in the second, <i>before</i> x is incremented. The value of <code>x</code> is 2 in both cases. </p>
+        <p>Now, just in case you thought you were coming clear on the use of the equals sign in Java, there’s more: the assignment operators. These are of the form +=, - =, *=, /=. (insert table with complete list of assignment operators and cross reference) The expression:</p>
+        <blockquote>int x += 5;</blockquote>
+        <p>Is the same as writing:</p>
+        <blockquote>int x = x + 5;</blockquote>
+        <p>And similarly:</p>
+        <blockquote>int x *= 5;</blockquote>
+        <p>Is the same as:</p>
+        <blockquote>x = x * 5;</blockquote>
+        <p>In effect, the left hand side of the assignment is appended to the right hand side. These are easy to use, notwithstanding the repeated use of the equals sign to mean something other than equality. (insert table with all operators)</p>
+    </body>
+</html>

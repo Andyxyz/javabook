@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultToc>
+  <TocEntry
+    Title="casting"
+    Link="/Content/Chapter One/casting.htm" />
+  <TocEntry
+    Title="character_arithmetic"
+    Link="/Content/Chapter One/character_arithmetic.htm" />
+  <TocEntry
+    Title="integer_division"
+    Link="/Content/Chapter One/integer_division.htm" />
+</CatapultToc>

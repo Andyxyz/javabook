@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultTarget
+  Version="1"
+  Comment=""
+  Type="PDF"
+  Destinations=""
+  GlossaryTermConversion="marked">
+  <PrintedOutput
+    MirrorMargins="true"
+    CollapseMargins="true" />
+</CatapultTarget>

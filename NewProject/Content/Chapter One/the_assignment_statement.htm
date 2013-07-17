@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/Stylesheets/Chapter One.css" rel="stylesheet" />
+    </head>
+    <body><pre>the assignment statement</pre>
+        <p>The equals sign rides again, this time in the form of an <i>assignment statement</i>:</p>
+        <blockquote>areaCircle = pi * radius * radius;</blockquote>
+        <p>Java contains a library value for pi, so there’s no need to define it in this fashion as a variable, but we’ll use it that way for now. Note that the variables are <i>not</i> preceded by an identifying type; that’s because we assume that they have already been declared with the appropriate type. The assignment statement is distinct from variable declaration and initialization. In the case of the variable, memory is initialized to the value of the variable; in the case of the assignment, data moves from one location to another in memory. In an assignment statement, computation is performed. When a variable is declared or declared and initialized, there’s no computation, merely a reference in memory. This is important to understand to prevent confusion between variable creation and assignment, and to prevent errors in your code. Another simple way to remember the difference is the order in which they happen. A variable must be created before it can be assigned; it need not be <i>initialized </i>before it is assigned. The point concerning computation is a practical one. <i>No computation can be performed before a variable has been assigned</i>. Remembering that an assignment statement involves computation will help you to remember this rule. Again, note that the assignment statement is <i>not</i> an equality statement. I am flogging this horse because it is so easy a mistake to make; all our lives, we have been accustomed to treat an equals sign as an indication that the two sides of an equation are equal. Not in Java, at least not in the usual sense. We will see yet more examples of the polymorphic (we know what that means from the introduction of this book hopefully) equals sign. (insert cross reference)</p>
+        <p>Let’s examine another assignment statement:</p>
+        <blockquote>final int AREA_CIRCLE = pi * radius * radius;</blockquote>
+        <p>Here, the variable <code>AREA_CIRCLE</code> is defined for the first time in the assignment statement, so it is identified by type and is capitalized because we want to use it as a constant. Capitalization is not required, but it is conventional in Java to capitalize constant values. The keyword <code>final </code>identifies the variable as constant; the formula for the area of a circle does not change. Again, this is not necessary, but conventional. The keyword <code>final</code> prevents alteration of the statement. Any attempt to change it returns an error message.</p>
+    </body>
+</html>

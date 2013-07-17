@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="2" MadCap:lastHeight="550" MadCap:lastWidth="979">
+    <head>
+        <link href="../Resources/Stylesheets/Chapter One.css" rel="stylesheet" />
+    </head>
+    <body>
+        <p class="HeadingRunIn" MadCap:autonum="1. ">character arithmetic</p>
+        <p>You will recall that all characters in Java are represented by 16 bit Unicode strings. So you might write the letter x, but the representation in memory is a 16 bit string. This means that the complete range of arithmetic operations are available on <tt>char</tt> types. This has greatest utility on operations with <tt>Strings</tt>, a data type we haven’t examined yet. (insert cross-reference) It can also be helpful for parsing files. Character arithmetic is not without its subtleties. Most important, when performing integer operations on <tt>char</tt> types, a cast to type <code>char</code> must always be included in the assignment. </p>
+        <p>Let’s look first at an example using a <span class="code">char</span> literal in the assignment.</p><pre xml:space="preserve"><span class="code">char letter ='b' + 5;</span></pre>
+        <p>As might be supposed, this expression evaluates to <code>g</code>. No cast is required because Java automatically recognizes the integer value of <span class="code">'b'</span>. Things become more interesting when we use unrecognized <code>int</code> types in the assignment; Java requires an explicit cast. This example shows casting in action.</p><pre class="code">char letter1 = 'm';</pre><pre class="code">char letter2 = (char)('letter1' + 1);</pre><pre class="code">char letter3 = 'l' + 2;</pre>
+        <p>This outputs the letter <span class="code">n</span> for both <tt>letter2</tt> and <code>letter3</code>. Note the use of the explicit cast to type <span class="code">char</span> in the second line. As mentioned, the memory representation of type <span class="code">char</span> primitives is Unicode -- hexadecimal. To maintain the compatibility with type <span class="code">char</span> in the assignment, the explicit cast is required. It is also possible to cast to type <span class="code">int</span> and return the decimal value of letters: a = 1, b = 2, and so forth. Another method will return the Unicode hexadecimal value of characters. (insert reference to toString method; include hexToString).</p>
+    </body>
+</html>

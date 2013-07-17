@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:sourceDocument="C:\Users\Andrew\Documents\Framemaker\Chapter One.fm">
+    <head>
+        <link href="../Resources/Stylesheets/Chapter One.css" rel="stylesheet" />
+    </head>
+    <body>
+        <p>floating point types</p>
+        <p>Java provides two floating point types, <span class="code">float </span>and <span class="code">double</span>. They are called floating point because the decimal point “floats.” The decimal point is also referred to as the “radix.” Floating point numbers are a bit more complex than integers.</p>
+        <p>Confusingly, the number of digits available and the accuracy differ. It’s a kind of trade off between scale and precision. <span class="code">Float</span> will hold up to four bytes of data, from -3.4E38 to +3.4E38. This is a shorthand way of writing 3.4 * 10^38. However, the accuracy is only to seven significant digits. In case that’s not confusing enough, floating point types will also hold a larger number of places closer to the origin than far from the origin. In other words, you can write small numbers to a higher number of decimal places than large ones. The smallest value that type <span class="code">float</span> will hold is approximately -1.4E45. </p>
+        <p>Type <span class="code">double</span> will hold eight bytes of data. The general specification for numbers of type <span class="code">double</span> is -/+ 1.7E308; the smallest <span class="code">double</span> is approximately -4.9E324. However, though the capacity to hold numbers is massive, the accuracy is only to 17 significant digits. </p>
+        <p>Most developers use <span class="code">int</span> <span class="code">double</span> as their default floating point type. The Java math library, which contains standard mathematical methods, uses <span class="code">double</span> for most operations, and this avoids the need to convert between types. (insert cross reference) Type <span class="code">float</span> is reserved for memory conservation purposes.</p>
+        <p>When type <span class="code">float</span> is used, an <span class="code">f</span> or <span class="code">F</span> must be appended. Examples:</p>
+        <p>double pi = 3.14159;</p>
+        <p>float aFloat = 2.65f;</p>
+        <p>&#160;</p>
+    </body>
+</html>

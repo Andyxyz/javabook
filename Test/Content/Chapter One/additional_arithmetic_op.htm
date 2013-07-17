@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/Stylesheets/Chapter One.css" rel="stylesheet" />
+    </head>
+    <body>
+        <p class="HeadingRunIn">additional arithmetic operators</p>
+        <p>There are some operations performed so frequently that Java provides shorthand notation. It is very common to add or subtract one from a variable. This can be written as ++, the <span class="Emphasis">increment operator</span>, or --, the <span class="Emphasis">decrement operator. </span>The increment and decrement operators may be written as either a <span class="Emphasis">prefix</span>, before the variable, or a <span class="Emphasis">postfix</span>, after the variable. Caution: the results are not always the same. This is confusing, so sit tight.</p><pre class="code">int x = 1;</pre><pre class="code">int y;</pre><pre class="code">int y = ++x;</pre><pre class="code">int y = x++;</pre>
+        <p>Believe it or not, in the first expression y is equal to 2 and x is equal to 2; in the second, y is equal to 1, while x is still equal to 2! You read that right; 1 = 2 in the second expression, or so it would appear. <span class="Emphasis">Only that is not the case.</span> We know by now that the equals sign in this context is initializing the variable y, not an equals sign.</p>
+        <p>It works this way because the assignment to <span class="code">y </span>in the first expression happens <span class="Emphasis">after</span> <span class="code">x</span> is incremented; in the second, <span class="Emphasis">before</span> x is incremented. The value of <span class="code">x</span> is 2 in both cases. </p>
+        <p>Now, just in case you thought you were coming clear on the use of the equals sign in Java, there’s more: the assignment operators. These are of the form +=, - =, *=, /=. (insert table with complete list of assignment operators and cross reference) The expression:</p><pre class="code">int x += 5;</pre>
+        <p>Is the same as writing:</p><pre class="code">int x = x + 5;</pre>
+        <p>And similarly:</p><pre class="code">int x *= 5;</pre>
+        <p>Is the same as:</p><pre class="code">x = x * 5;</pre>
+        <p>In effect, the left hand side of the assignment is appended to the right hand side. These are easy to use, notwithstanding the repeated use of the equals sign to mean something other than equality. (insert table with all operators)</p>
+    </body>
+</html>

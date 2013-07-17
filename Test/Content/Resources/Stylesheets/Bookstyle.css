@@ -1,0 +1,49 @@
+/*<meta />*/
+
+p.MyStyle
+{
+	font-family: Arial;
+	font-size: 12pt;
+	margin: 0px;
+}
+
+img
+{
+	border: none;
+}
+
+a.Popup
+{
+	
+}
+
+p.HeadingRunIn
+{
+	font-variant: small-caps;
+	mc-auto-number-format: '{n+}. ';
+}
+
+@media print
+{
+	p.HeadingRunIn
+	{
+		
+	}
+}
+
+span.smallcaps
+{
+	font-variant: small-caps;
+}
+
+span.code
+{
+	
+}
+
+MadCap|helpControlMenuItem
+{
+	font: monospace;
+	font-size: 12pt;
+}
+

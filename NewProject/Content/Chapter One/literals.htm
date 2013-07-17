@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/Stylesheets/Chapter One.css" rel="stylesheet" />
+    </head>
+    <body><pre>literals</pre>
+        <p>Values may also be declared without variables, as <i>literals</i> or <i>constants</i>. Such values do not have to be declared and initialized, but if they are not, they will only be recognized if they are part of an expression. An expression is a statement which evaluates to a specific value. You can write:</p>
+        <blockquote>int number;</blockquote>
+        <blockquote>number = 18 + 3;</blockquote>
+        <p>Without declaring variables for <code>18</code> and <code>3</code>. However, you cannot simply declare an integer or another primitive value, unless you use a variable. The statement:</p>
+        <blockquote>int = 21;</blockquote>
+        <p>is not legal. Java will construe it as a variable declaration without a name instead of recognizing it as a literal.</p>
+        <p>By the same token:</p>
+        <blockquote>boolean = true;</blockquote>
+        <p>Is not a legal statement. Instead, you must write:</p>
+        <blockquote>boolean isSwitchedOn = true;</blockquote>
+        <p>Care must be exercised in the use of literals. Literals can be difficult to parse for somebody else reading your code. In the above statement, what do the literal values <code>18</code> and <code>3</code> correspond to? Let’s look at them in another context.</p>
+        <blockquote>int diameter = 18 + 3;</blockquote>
+        <p>If instead of a book, this were an architectural program, suddenly those “magic numbers” would begin looking fishier. Maybe they are dimensions? But if so, dimensions of what? Here’s another, more bulletproof way to write that code;</p>
+        <blockquote>int totalDiameter;</blockquote>
+        <blockquote>int innerDiameter = 3;</blockquote>
+        <blockquote>int outerDiameter = 18;</blockquote>
+        <blockquote>totalDiameter = innerDiameter + outerDiameter;</blockquote>
+        <p>The variables are much clearer than the “magic numbers,” and code of any sophistication uses variables wherever possible.</p>
+        <p>A best practice with regard to the use of literals is in the case of <i>constants</i>. Constants should be declared using the <i>final</i> keyword. Constant names are by convention capitalized. Variables declared as final cannot be changed without changing the statement containing the final modifier. A constant would be written as follows.</p>
+        <p style="font-family: Inconsolata;font-weight: normal;font-style: normal;font-size: 12pt;letter-spacing: 0em;color: #000000;text-decoration: none;"><code>final int TOTAL_DIAMETER = 21;</code>
+        </p>
+        <p>One additional note concerning literals. For primitives of type <code>char</code>, literals must be enclosed within single quotes. We’ve seen this already; let’s make it explicit.</p>
+        <p style="font-family: Inconsolata;font-weight: normal;font-style: normal;font-size: 12pt;letter-spacing: 0em;color: #000000;text-decoration: none;"><code>char character = 'u';</code>
+        </p>
+        <p>&#160;</p>
+        <p>&#160;</p>
+        <h2>Mathematical Operations</h2>
+        <p>Java uses the ordinary symbols for addition, subtraction, multiplication, and division: +, -, *, and /. To this it adds a fifth operation, %, for modulus, which is simply the remainder of integer division. The order of operations is the same as that used in arithmetic, so mixed expressions evaluate multiplication and division before addition and subtraction. Parentheses can also be used to control order of operations in the usual fashion. The remainder of this section is devoted to the less-intuitive aspects of math in Java.</p>
+    </body>
+</html>

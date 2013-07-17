@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FrameMakerImport
+  AnchoredFrameHandling="flattened"
+  PreserveImageSize="true"
+  CreateTableStyleForTables="true"
+  ReimportTableStyles="true"
+  PreserveSourceStyles="false"
+  KeepSourceLinks="false"
+  ConvertInlineFormatting="true"
+  AddContinuedLinks="false"
+  AddContinuedFromLinks="false"
+  ContinuedLinkFormat="(continued in {title})"
+  ContinuedFromLinkFormat="(continued from {title})"
+  UseMaxCharLimit="false"
+  UseMinCharLimit="true"
+  MaxCharLimit="10000"
+  MinCharLimit="50"
+  FilenameLength="24"
+  LastCollectTime="2013-07-08T09:11:25.4343549-04:00"
+  ProjectName="NewProject"
+  ProjectFolder="C:\Users\Andrew\Documents\My Projects"
+  AutoSync="false"
+  EnablePassthroughMarkers="true"
+  PassthroughMarkerMethod="text"
+  LastImport="2013-07-08T09:18:07.9353767-04:00">
+  <Files>
+    <Url
+      Source="../../../../Framemaker/Chapter One.fm"
+      AbsoluteSource="file:///C:/Users/Andrew/Documents/Framemaker/Chapter One.fm" />
+  </Files>
+  <ExcludedFiles />
+  <CollectedSourceFiles>
+    <Url
+      Source="../../../../Framemaker/Chapter One.fm"
+      AbsoluteSource="file:///C:/Users/Andrew/Documents/Framemaker/Chapter One.fm" />
+  </CollectedSourceFiles>
+  <SkippedSourceFiles />
+  <GeneratedFiles>
+    <Url
+      Source="../../Content/Chapter One/Chapter One.htm"
+      TimeStamp="7/8/2013 9:17:48 AM" />
+    <Url
+      Source="../../Content/Chapter One/decimal_integer_types.htm"
+      TimeStamp="7/8/2013 9:17:48 AM" />
+    <Url
+      Source="../../Content/Chapter One/floating_point_types.htm"
+      TimeStamp="7/8/2013 9:17:48 AM" />
+    <Url
+      Source="../../Content/Chapter One/character_types.htm"
+      TimeStamp="7/8/2013 9:17:48 AM" />
+    <Url
+      Source="../../Content/Chapter One/boolean_types.htm"
+      TimeStamp="7/8/2013 9:17:48 AM" />
+    <Url
+      Source="../../Content/Chapter One/variable_declaration_and.htm"
+      TimeStamp="7/8/2013 9:17:48 AM" />
+    <Url
+      Source="../../Content/Chapter One/literals.htm"
+      TimeStamp="7/8/2013 9:17:48 AM" />
+    <Url
+      Source="../../Content/Chapter One/the_assignment_statement.htm"
+      TimeStamp="7/8/2013 9:17:48 AM" />
+    <Url
+      Source="../../Content/Chapter One/casting.htm"
+      TimeStamp="7/8/2013 9:17:48 AM" />
+    <Url
+      Source="../../Content/Chapter One/integer_division.htm"
+      TimeStamp="7/8/2013 9:17:48 AM" />
+    <Url
+      Source="../../Content/Chapter One/additional_arithmetic_op.htm"
+      TimeStamp="7/8/2013 9:17:48 AM" />
+    <Url
+      Source="../../Content/Chapter One/the_java_math_library.htm"
+      TimeStamp="7/8/2013 9:17:48 AM" />
+    <Url
+      Source="../../Content/Chapter One/character_arithmetic.htm"
+      TimeStamp="7/8/2013 9:17:48 AM" />
+    <Url
+      Source="../../Content/Chapter One/binary_and_hexadecimal_c.htm"
+      TimeStamp="7/8/2013 9:17:48 AM" />
+    <Url
+      Source="../../Content/Resources/PageLayouts/Chapter One/LeftRightPageLayout.flpgl"
+      TimeStamp="7/8/2013 9:17:48 AM" />
+    <Url
+      Source="../ConditionTagSets/Chapter One.flcts"
+      TimeStamp="7/8/2013 9:17:48 AM" />
+    <Url
+      Source="../TOCs/Chapter One.fltoc"
+      TimeStamp="7/8/2013 9:17:48 AM" />
+  </GeneratedFiles>
+  <ImportStyles>
+    <Styles>
+      <Style
+        Name="Paragraph">
+        <Classes>
+          <StyleClass
+            Name="Body" />
+          <StyleClass
+            Name="Title" />
+          <StyleClass
+            Name="Heading1" />
+          <StyleClass
+            Name="HeadingRunIn" />
+          <StyleClass
+            Name="code" />
+        </Classes>
+      </Style>
+      <Style
+        Name="Character">
+        <Classes>
+          <StyleClass
+            Name="Emphasis" />
+          <StyleClass
+            Name="code" />
+        </Classes>
+      </Style>
+    </Styles>
+  </ImportStyles>
+  <ParagraphStyles>
+    <Map
+      From="Heading1"
+      To="h2" />
+    <Map
+      From="Heading2"
+      To="h2.(FrameMaker Style)" />
+    <Map
+      From="Heading3"
+      To="h3.(FrameMaker Style)" />
+    <Map
+      From="Heading4"
+      To="h4.(FrameMaker Style)" />
+    <Map
+      From="Heading5"
+      To="h5.(FrameMaker Style)" />
+    <Map
+      From="Heading6"
+      To="h6.(FrameMaker Style)" />
+    <Map
+      From="Body"
+      To="p" />
+    <Map
+      From="code"
+      To="blockquote" />
+    <Map
+      From="HeadingRunIn"
+      To="pre" />
+    <Map
+      From="Title"
+      To="h1" />
+  </ParagraphStyles>
+  <CharacterStyles>
+    <Map
+      From="code"
+      To="code" />
+    <Map
+      From="Emphasis"
+      To="i" />
+  </CharacterStyles>
+  <XRefStyles />
+  <NewTopicStyles>
+    <StyleName
+      Name="HeadingRunIn" />
+  </NewTopicStyles>
+  <UsedParagraphStyles>
+    <StyleName
+      Name="Body" />
+    <StyleName
+      Name="code" />
+    <StyleName
+      Name="Heading1" />
+    <StyleName
+      Name="HeadingRunIn" />
+    <StyleName
+      Name="Title" />
+  </UsedParagraphStyles>
+  <UsedCharacterStyles>
+    <StyleName
+      Name="code" />
+    <StyleName
+      Name="Emphasis" />
+  </UsedCharacterStyles>
+  <UsedXRefStyles />
+  <UsedTableStyles />
+  <CharacterStyleDefinitions>
+    <Style
+      Name="Emphasis"
+      style="font-style: italic;" />
+    <Style
+      Name="code"
+      style="font-family: Inconsolata; font-weight: normal; font-style: normal; font-size: 12pt; letter-spacing: 0em; color: #000000; text-decoration: none;" />
+  </CharacterStyleDefinitions>
+  <ParagraphStyleDefinitions>
+    <Style
+      Name="Body"
+      style="text-align: left; margin-left: 0.5in; margin-right: 0in; margin-top: 0pt; margin-bottom: 14pt; font-family: 'Times New Roman Baltic'; font-weight: normal; font-style: normal; font-size: 12pt; letter-spacing: 0em; color: #000000; mc-hyphenate: never; text-indent: 0px; line-height: 14pt; text-decoration: none;" />
+    <Style
+      Name="Title"
+      style="text-align: center; margin-left: 0in; margin-right: 0in; margin-top: 24pt; margin-bottom: 12pt; font-family: 'Times New Roman'; font-weight: bold; font-style: normal; font-size: 18pt; letter-spacing: 0em; color: #000000; mc-hyphenate: never; text-indent: 0px; line-height: 24pt; text-decoration: none;" />
+    <Style
+      Name="Heading1"
+      style="text-align: left; margin-left: 0in; margin-right: 0in; margin-top: 14pt; margin-bottom: 6pt; font-family: 'Times New Roman'; font-weight: bold; font-style: normal; font-size: 14pt; letter-spacing: 0em; color: #000000; text-indent: 0px; line-height: 16pt; text-decoration: none;" />
+    <Style
+      Name="HeadingRunIn"
+      style="text-align: left; margin-left: 0in; margin-right: 0in; margin-top: 6pt; margin-bottom: 0pt; font-family: 'Times New Roman'; font-weight: normal; font-style: normal; font-size: 12pt; letter-spacing: 0em; color: #000000; mc-auto-number-format: '{chapnum}.{n+} '; mc-auto-number-position: inside-head; mc-auto-number-offset: 0px; text-indent: 0px; line-height: 14pt; font-variant: small-caps; text-decoration: none;" />
+    <Style
+      Name="code"
+      style="text-align: left; margin-left: 0.5in; margin-right: 0in; margin-top: 0pt; margin-bottom: 0pt; font-family: Inconsolata; font-weight: normal; font-style: normal; font-size: 12pt; letter-spacing: 0em; color: #000000; mc-hyphenate: never; text-indent: 0px; line-height: 14pt; text-decoration: none;" />
+  </ParagraphStyleDefinitions>
+  <XRefStyleDefinitions />
+  <TableStyleDefinitions />
+</FrameMakerImport>

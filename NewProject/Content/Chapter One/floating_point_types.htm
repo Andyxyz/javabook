@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="2" MadCap:lastHeight="514" MadCap:lastWidth="979">
+    <head>
+        <link href="../Resources/Stylesheets/Chapter One.css" rel="stylesheet" />
+    </head>
+    <body><pre>floating point types</pre>
+        <p>Java provides two floating point types, <code>float </code>and <code>double</code>. They are called floating point because the decimal point “floats.” The decimal point is also referred to as the “radix.” Floating point numbers are a bit more complex than integers.</p>
+        <p>Confusingly, the number of digits available and the accuracy differ. It’s a kind of trade off between scale and precision. <code>Float</code> will hold up to four bytes of data, from -3.4E38 to +3.4E38. This is a shorthand way of writing 3.4 * 10^38. However, the accuracy is only to seven significant digits. In case that’s not confusing enough, floating point types will also hold a larger number of places closer to the origin than far from the origin. In other words, you can write small numbers to a higher number of decimal places than large ones. The smallest value that type <code>float</code> will hold is approximately -1.4E45. </p>
+        <p>Type <code>double</code> will hold eight bytes of data. The general specification for numbers of type <code>double</code> is -/+ 1.7E308; the smallest <code>double</code> is approximately -4.9E324. However, though the capacity to hold numbers is massive, the accuracy is only to 17 significant digits. </p>
+        <p>Most developers use <code>int</code> <code>double</code> as their default floating point type. The Java math library, which contains standard mathematical methods, uses <code>double</code> for most operations, and this avoids the need to convert between types. (insert cross reference) Type <code>float</code> is reserved for memory conservation purposes. And what is it like to edit in this thing.</p>
+        <p>When type <code>float</code> is used, an <code>f</code> or <code>F</code> must be appended. Examples:</p>
+        <blockquote>double pi = 3.14159;</blockquote>
+        <blockquote>float aFloat = 2.65f;</blockquote>
+    </body>
+</html>

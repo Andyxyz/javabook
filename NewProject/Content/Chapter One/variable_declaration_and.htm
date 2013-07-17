@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/Stylesheets/Chapter One.css" rel="stylesheet" />
+    </head>
+    <body><pre>variable declaration and initialization</pre>
+        <p>Variables in Java are also known as <i>identifiers</i>. The creation of a variable is called <i>declaration </i>and assigning it a value is called <i>initialization. Variables in Java are always associated with a type.</i> A correct variable declaration is of the form:</p>
+        <blockquote>int number;</blockquote>
+        <p>Thus identifying the variable by both name and type. Note as well the semi-colon which terminates the line. Every statement in Java must terminate with a semi-colon. To then initialize the variable with a value, the syntax is:</p>
+        <blockquote>int number = 8;</blockquote>
+        <p>Note the <code>=</code> sign. The equals sign takes on a multiplicity of new and confusing roles in Java -- not the greatest virtue of the language. Here, the equals sign functions to initialize <code>int number</code>. <i>This is not an equality statement. There is no reflexive property; the statement cannot be reversed. And there are even situations in which the assignment statement creates two unequal operands on either side. </i>(insert cross reference)<i>  <![CDATA[ ]]></i></p>
+        <p>Variables may also be assigned to other variables:</p>
+        <blockquote>int number = quantity;</blockquote>
+        <blockquote>int quantity = amount;</blockquote>
+        <blockquote>int amount = number;</blockquote>
+        <p>Java variables should be named using clear, descriptive language. This leads to readable, maintainable code; cryptic, anonymous names leads to code which conversely is difficult to read and maintain. Long variables names are a best practice in Java, though one honored often in the breach.</p>
+        <blockquote>int bicycleWheelSize;</blockquote>
+        <p>is preferable to:</p>
+        <blockquote>int size;</blockquote>
+        <p>and markedly preferable to:</p>
+        <blockquote>int s;</blockquote>
+        <p>which says nothing about the meaning of the variable. There is informed thinking behind the decision to call Java variables “identifiers.” They should identify data, not merely name it.</p>
+        <p>An exception to the rule concerning long identifiers is for mathematical variables or for variables which are scoped only to a method (insert cross reference). The math convention of using single-letter variable names is generally followed. For locally-scoped variables, it depends upon the context. The priorities are always clarity first, compactness second.</p>
+        <p>Note also the use of <i>lowerCamelCase</i>, in which the first word is written with lower case, subsequent words with upper case. This is not strictly necessary, merely conventional. Identifiers in Java can begin with a dollar sign, an underscore, or a letter. Numerals are not permitted. The rest of the identifier can use any symbol, except those reserved as operators. Any word is acceptable, except for a reserved word. (insert cross references to operators and to reserved words) Java is case sensitive, so <code>BicycleWheel</code> is not the same as <code>bicycleWheel</code>. Because of the potential for conflict with reserved operators, using special characters or other symbols in a variable name is not a best practice, nor do Java variables conventionally begin with a dollar sign or underscore. Best practice is to use letters to begin a variable name, and a combination of letters and numbers in the remainder of the name.</p>
+        <p>Type integrity is required in naming variables. Java is a strongly typed language; no variable may exist without a data type. This applies not only to primitive data types, but all data types, including those created by the user:</p>
+        <p style="font-family: Inconsolata;font-weight: normal;font-style: normal;font-size: 12pt;letter-spacing: 0em;color: #000000;text-decoration: none;"><code>Clothing trousers = denim;</code>
+        </p>
+        <p>initializes the identifier <code>trousers</code>, of type <code>Clothing</code>, with the value <code>denim</code>.</p>
+    </body>
+</html>

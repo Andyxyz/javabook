@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <link href="../Resources/Stylesheets/Chapter One.css" rel="stylesheet" />
+    </head>
+    <body><pre>casting</pre>
+        <p>It is sometimes necessary to convert between types. For example, if a variable declared to be of type <code>int</code> experiences overflow, it is necessary to convert it to type <code>long</code>. In such a case, where the value is being increased and there is no potential for loss of data, Java will automatically convert the type in a process called <i>casting. </i>However, where the conversion can result in a loss of precision, the cast must be performed manually, in a process called <i>explicit casting.</i> Explicit casting is a safeguard to prevent the user from inadvertently losing precision. For example, if a variable is of type <code>int</code> and the attempt is made to assign to it a value of type <code>double</code>, an error message “possible loss of precision” is returned. The code:</p>
+        <blockquote>double number = 4.4;</blockquote>
+        <blockquote>int integer = number * 6;</blockquote>
+        <p>is incorrect. Because of strict typing in Java, the compiler looks for an <code>int</code> type on the right hand side of the assignment statement. It is necessary to perform an explicit cast:</p>
+        <blockquote>double number = 4.4;</blockquote>
+        <blockquote>int integer = (int)number * 6;</blockquote>
+        <p>thus converting the <code>double number</code> to type <code>int</code>.</p>
+        <p>Casting is not limited to primitive types. It is also done on other types; in fact on any type where appropriate. (insert cross reference) Care must be used when manually casting to avoid unanticipated errors; it should be avoided as a best practice, though there are times when it is unavoidable. Especially in somebody else’s code.</p>
+        <p>And a final point concerning casting. While intuitively, one would expect Java to round up or down when casting floating point to integer types, in fact it merely truncates the least significant digits: those to the right of the decimal point. So 3.14 becomes 3, and so does 3.99. This can lead to significant arithmetic error.</p>
+    </body>
+</html>
