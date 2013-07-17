@@ -1,0 +1,494 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="794.4" MadCap:lastWidth="624">
+    <head>
+        <link href="../Resources/Stylesheets/Bookstyle.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="title">Objects, Classes, and Methods</h1>
+        <h1>Classes</h1>
+        <p class="HeadingRunIn" MadCap:autonum="1.1 ">classes and class members</p>
+        <p>Classes always open and close with curly braces. This is a requirement. Class names are capitalized by convention. Classes are a way of organizing a program into logical, modular units. Each class contains data and methods which operate upon that data. These data and methods must be logically and functionally related. Classes are the largest functional unit in an application. Without correct classes, effective object-oriented programming is impossible. Classes are synonymous with data <cite>types</cite>; together with their integral data and methods, classes are the very foundation upon which effective applications are built. Writing correct classes is perhaps the single greatest skill a developer can cultivate, especially in the development of an application of any size or complexity.</p>
+        <p>Suppose that we are creating an application which models fuel consumption and economy in a car. Call it <code>FuelEconomy.</code>We might have classes called <code>FuelGauge</code> and <code>Driver</code>. The <code>Driver</code> class would contain information about who is sitting behind the wheel at a given time, and the <code>FuelGauge</code> class would contain information relative to the state of the gas gauge. Both data and methods would be necessary to model this information. Thus, in the <code>FuelGauge</code> class, we might have a variable named <code>double FUEL_TANK</code>, which specifies the capacity of the fuel tank. You will recall that <code>FUEL_TANK</code> is written with all caps because it is a constant; the capacity of the fuel tank does not change. Another variable might be <code>double fuelRemaining</code>. An example of a method in the <code>FuelGauge</code> class might be <code>notifyLowFuel()</code>. </p>
+        <p>In Chapters One and Two we used examples related to the consumption of alcoholic beverages, and I see no reason to abandon the drinking motif now. So we are going to create an inventory and billing system for a bar. This program contains a class called <code>Whiskey</code>. We have had only the briefest of introductions to Strings in Chapter One, but I am going to use them again now. You will recall that Strings are groups of letters, frequently used for names, addresses, and so forth. Our <code>Whiskey</code> class might look like this.</p><pre>public class Whiskey {</pre><pre>String jimBeam;</pre><pre>String jackDaniels;</pre><pre>String chivasRegal;</pre><pre>String glenlivet;</pre><pre>String distilledOutBack;</pre><pre>}</pre>
+        <p>Etc. When complete, this class would contain all the brands of whiskey that the bar serves. It might or might not make sense to have subclasses for Bourbon, Scotch, Irish, Rye, etc. These subclasses would inherit from the parent class <code>Whiskey</code>. We discuss class inheritance subsequently. (insert cross reference) It is a judgment call whether to subclass. It depends upon whether there is a need for specialization. If yes, create the subclass. If not, then do not. </p>
+        <p class="HeadingRunIn" MadCap:autonum="1.2 ">static and instance members</p>
+        <p>Since we are creating an inventory and billing system, we might also wish to include what is charged for a glass of a particular whiskey, how many glasses there are per bottle, what the retail cost is, and other such data. These types of objects, which are particular to an item of data, are called <cite>instance members</cite> of the class. Objects which more logically belong to the class as a whole are called <cite>static members</cite> of the class. Static members are also known as <cite>class members.</cite> An example of a static member might be the total number of bottles of whiskey on hand.</p>
+        <p style="font-family: Inconsolata;font-weight: normal;font-style: normal;font-size: 12pt;letter-spacing: 0em;color: #000000;text-decoration: none;"><code>static int totalBottles = 26;</code>
+        </p>
+        <p>Since we are tallying all the instance members, <code>totalBottles</code> would be a static data item. In this example, <span class="_Override" style="font-family: Inconsolata;">static String totalBottles</span> is not, like the other variables, a declaration of a unique variety of whiskey. Rather, it is a count of these unique varieties. Logically it belongs to the class. </p>
+        <p>We might add another static variable.</p>
+        <p><code>static double SHOT_SIZE = 1.5;</code>
+        </p>
+        <p>If all whiskeys are to be served by the 1.5 oz. shot, then this is a class variable. Note the capitalization of <code>SHOT_SIZE</code>. Constants are frequently static variables. </p>
+        <p>Now let’s change things around slightly. Suppose we created another class, called <code>GlassTypes</code>. We want to make sure that we have the correct glasses on hand to serve a variety of cocktails, beers, wines, and spirits, and we want to make sure that the correct glass is used for the correct libation. Our new class might look like this.</p><pre>public class GlassWare {</pre><pre>String champagneFlute;</pre><pre>String wineTulip;</pre><pre>String whiskeyShotGlass;</pre><pre>String beerStein;</pre><pre>String brandySnifter;</pre><pre>}</pre>
+        <p>The variable <code>shotGlass</code> is very different from <code>SHOT_SIZE</code>, the static member of the above <code>Whiskey</code> class. Grouped with other glasses, <code>whiskeyShotGlass</code> is an instance variable. What might a static variable of this class be? How about <code>capacity</code>? No. Unlike in the <code>Whiskey</code> class, each glass has a unique capacity. A better example might be the following.</p><pre>static String UNITS = <span class="_Override" style="font-family: Cambria;font-size: 11pt;line-height: 13pt;">"</span>metric<span class="_Override" style="font-family: Cambria;font-size: 11pt;line-height: 13pt;">"</span>;</pre>
+        <p>Now we have a static variable; the volume of all <code>GlassTypes</code> will be specified in metric units. Since this is a mathematical constant, it makes sense to specify it as such. Also, note the quotation marks around the <code>String</code> literal <span class="_Override" style="font-family: Cambria;font-size: 11pt;line-height: 13pt;">"</span><span class="_Override" style="font-family: Inconsolata;">metric</span><span class="_Override" style="font-family: Cambria;font-size: 11pt;line-height: 13pt;">". More about Strings (insert cross reference)</span></p>
+        <p class="HeadingRunIn" MadCap:autonum="1.3 ">final variables</p>
+        <p>A variable marked with the keyword <code>final</code> cannot be modified. It’s like an immutable constant. Such variables are often static variables.</p>
+        <p><code>final static double METRIC_SHOT = 44.36;</code>
+        </p>
+        <p>Note the use of the keyword <code>final</code>. This prevents the value of the variable from being altered. Here, we have specified the value of a 1.5 oz. shot in metric units, equal to 44.36 ml. Any attempt to change this value will cause a compilation error. </p>
+        <p>It is a best practice to use the final keyword if the value of a variable is fixed. This prevents accidental modification of the value because of the way Java handles arguments pertaining to object types. When a method is called on an object, the object can be modified in unexpected ways, a common source of bugs in Java. More on this below. (insert cross reference)</p>
+        <h1>Methods</h1>
+        <h2>Elements Of A Method</h2>
+        <p class="HeadingRunIn" MadCap:autonum="1.4 ">methods with a return statement; static methods</p>
+        <p>Now that we have class members, we need to do some computation on them. That’s where methods come in. As you have probably inferred by now, methods operate upon data. Java has stringent syntax pertaining to methods, in part based upon strong typing, in part based upon encapsulation. Methods are complex, and we will examine them here in great detail.</p>
+        <p>The required elements of a method are a return type, a name, a pair of parentheses, and a body between braces. In addition, there is an optional list of <cite>parameters</cite> which appears between the parentheses. Parameters are separated by commas. Every parameter has both a type and a name. Parameters pass arguments to the body of the method. The method name is always written with parentheses, even when the method does not contain any parameters. That’s why the name for the <code>main()</code> method is followed by parentheses; the same is true for all methods.</p>
+        <p>Methods may broadly be classified into two types, those which return a value and those which do not. Methods which return a value must have a <cite>return statement</cite>. Methods which do not are classified as <cite>void.</cite> <![CDATA[ ]]></p>
+        <p>Let’s begin with the more intuitive case, a method with a return statement. We return to the example of the <code>FuelEconomy</code> application. A very basic calculation is how far the car has traveled and how much gasoline has been consumed. We want initially to determine how far the car has traveled.</p><pre xml:space="preserve">public double getDistance() {</pre><pre xml:space="preserve">    return distance;</pre><pre xml:space="preserve">}</pre>
+        <p>For now, ignore the access modifier <code>public</code>. We’ll consider that below. This method has all the required elements: a return type, a name, a pair of parentheses, and a body between braces. There are no parameters. The return type is simply the type of the <code>return</code> statement, in this case <code>double</code>. If this method were called from another method, it would return to that other method a <code>double</code> value for <code>distance.</code> Note the form of the <code>return</code> statement; it is simply the word <code>return</code>, followed by an expression which returns a value. A return statement can have multiple parts, but they must evaluate to a single expression. Best practice is to be very judicious in this usage, as it can lead to error. An example where multiple return statements would be both permissible and valuable would be where there is a series of boolean <code>if</code> statements. The resulting code can be clearer and more compact with multiple return statements in such an instance. </p><pre>if(foo &gt; 100) {</pre><pre>return thisThing;</pre><pre>} else {</pre><pre>return thatThing;</pre><pre>}</pre>
+        <p>Here is the same snippet with a single return statement.</p><pre>if(foo &gt; 100) {</pre><pre>result = thisThing;</pre><pre>} else {</pre><pre>result = thatThing;</pre><pre>return result;</pre><pre>}</pre>
+        <p>The first snippet is indeed more compact and readable. Note,  however, that because they are boolean statements, there is in fact only a single return statement. The statements are evaluated in the alternative, and only one is returned.</p>
+        <p>Now let’s examine a void method. In place of a return type, we use the keyword <code>void</code>. Initially, the idea of a void method can be confusing. How can a method perform computation, yet not return a value? The answer is that a method of type <code>void</code> produces so-called <cite>side effects.</cite> Typically, an input is set, or the state of a variable is changed. For purposes of illustration, we are going to examine a very common example of a <code>void</code> method. Returning to our <code>FuelEconomy</code> application, we are simply going to set the distance for a trip. </p><pre>public void setDistance(double theTrip) {</pre><pre>    theTrip = distance;</pre><pre>}</pre>
+        <p>What is taking place here? Why is this statement void? Let’s think about what it does: it has an effect, but it does not return a value<cite>.</cite> Compare it with the prior method that has a return statement. The void method sets the distance; it does not evaluate and return it. The void method would not be called ordinarily from another method <cite>because it does not return a value.</cite> We are not calculating anything; we are merely defining an input. There are times when the decision to use a <code>void</code> method or whether to return a value is a matter of judgment and style. </p><pre>public class GetGrades {</pre><pre>    public static void evaluateGrade(double score) {</pre><pre>      if (score &gt;= 90.0) {</pre><pre>         char A = 'A';</pre><pre>      }</pre><pre>      else if (score &gt;= 80.0) {</pre><pre>         char B = 'B';</pre><pre>      }</pre><pre>      else if (score &gt;= 70.0) {</pre><pre>         char C = 'C';</pre><pre>      }</pre><pre>      else if (score &gt;= 60.0) {</pre><pre>         char D = 'D';</pre><pre>      }</pre><pre>      else {</pre><pre>         char F = 'F';</pre><pre>      }</pre><pre>   }</pre><pre>}</pre>
+        <p>Note how this method works. It does not return a value; it does not evaluate an expression. What it does do is set out the standards by which grades are determined, using the boolean <code>if</code> statement. There is no <cite>result</cite> of this code. It has only the <cite>effect</cite> of elaborating the grading method. To use this method, it would have to be called on a variable and passed an argument of type <code>double.</code>We would then determine what the grade is. This code could as easily have been written with the name <code>getGrade</code> and return the grade as a value of type <code>double</code>. </p><pre>public static double getGrade(double grade) {</pre><pre>      if (grade &gt;= 90.0) {</pre><pre>         char A = 'A';</pre><pre>      }</pre><pre>      else if (grade &gt;= 80.0) {</pre><pre>         char B = 'B';</pre><pre>      }</pre><pre>      else if (grade &gt;= 70.0) {</pre><pre>         char C = 'C';</pre><pre>      }</pre><pre>      else if (grade &gt;= 60.0) {</pre><pre>         char D = 'D';</pre><pre>      }</pre><pre>      else {</pre><pre>         char F = 'F';</pre><pre>      }</pre><pre>      return grade;</pre><pre>   }</pre><pre>}</pre>
+        <p>Note how these two methods, the first one of type <code>void</code> and the second one with a return type of <code>double</code>, accomplish much the same thing. In the first case, we are examining the effect of differing scores on grades; in the second one, we are evaluating and returning a grade. They are not the same, but they could both be used to accomplish the same end. The key point for you is to recognize the difference and to be able to use both types of methods in your own code.</p>
+        <p class="HeadingRunIn" MadCap:autonum="1.5 ">the parameter list</p>
+        <p>Between the parentheses following a method comes an optional parameter list. Parameters are variables of a specified type which initialize the method with values. This all sounds rather abstract, so let’s look at an example.</p><pre> public int addIntegers(int x, int y, int z) {</pre><pre>       return x + y + z;</pre><pre> }</pre>
+        <p>When a method has parameters, they must be used in the method body.</p>
+        <p>A note on terminology here. There is much confusion between the words <cite>parameter</cite> and <cite>argument.</cite> The best view is that a method declaration uses parameters; the values passed are arguments. In the above example, <code>(int x, int y, int z)</code> are parameters; when these variables are initialized with values, they are passed as arguments to the body of the method, where calculation is performed.</p>
+        <p class="HeadingRunIn" MadCap:autonum="1.6 ">the method signature</p>
+        <p>The <cite>signature</cite> of a method uniquely identifies that method. It consists of the name, the number, types, and order of parameters of the method. Note that it is the <cite>type</cite> of the parameters which matters. The actual <cite>values</cite> of the parameters are irrelevant. Note as well that the return type is not part of the method signature. </p>
+        <h2>Using Methods</h2>
+        <p class="HeadingRunIn" MadCap:autonum="1.7 ">calling class and instance methods</p>
+        <p>Just as there are class and instance variables, there are class and instance methods. As you have probably inferred, instance methods operate upon only the  instance variable which call them; class methods operate on the entire class they are called on. Like variables, class methods are also referred to as <code>static</code>. In order to call an instance method, an instance of a particular class must have been created, or <cite>instantiated</cite>. Static methods may be called even when no class members have been created. This makes sense; the class is a set, and class methods operate upon the set even when it is empty. Instance variables are members of the set and, without one, it would be logically impossible to call a method on it. When we define a static method, as with static variables, we must use the keyword <code>static</code>. A typical purpose of a <code>static</code> method is to count class objects. So to create a method to keep a tally of the whiskey bottles in the bar we could write this.</p><pre>public static int countBottles();</pre>
+        <p>The syntax for calling static and instance methods is quite similar. For instance methods, we use the name of the calling variable, then the <cite>dot operator</cite>, followed by the name of the method. Let’s assume that our bar has a method called <code>makeChange()</code>, to track cash that is going into and coming out of the till. We could call it on the variable <code>customer</code> as follows.</p><pre>customer.makeChange();</pre>
+        <p>And if we wish to call a static method, we use the name of the class, followed by the dot operator, followed by the name of the method. If we wish to call the <code>countBottles() </code>method in the <code>Whiskey</code> class, we write this.</p><pre>Whiskey.countBottles();</pre>
+        <p>The syntax is actually identical, the difference being that when calling a static method, it is a class name, not the name of an instance variable, which precedes the dot operator. As an aside, this illustrates the utility of the convention of using lower camel case for instance methods and variables and initial capitals for class names. It is immediately apparent when comparing these two methods that one calls an instance method, the other a class method.</p>
+        <p class="HeadingRunIn" MadCap:autonum="1.8 ">constructors</p>
+        <p>There is a specialized method found in every class called the <cite>constructor</cite>. The constructor is used to initialize objects of the class type with a range of properties, either as data passed from parameters or as methods contained within the body of the constructor. Constructors are unique in that they are always <code>public</code>, they never have a return type, and they always have the same name as the class. Unlike a simple variable declaration and assignment, constructors allow the combination of a diverse range of data and methods to form a complex object. Let’s look at an example of a constructor and an associated method. </p><pre>Student(String givenName, String surname){</pre><pre>    givenName = firstName;</pre><pre>    surname = lastName;</pre><pre>    count++; </pre><pre>    makeStudentID();</pre><pre>}</pre><pre>public final int makeStudentID(){</pre><pre>     return studentID = count + 1000; </pre><pre>}</pre>
+        <p>Here, we have created a constructor for an object of type <code>Student</code>. We have passed it parameters of type <code>String</code> for <code>givenName</code> and <code>surname</code>. The values contained in these arguments are assigned to <code>firstName</code> and <code>lastName</code>, respectively. </p>
+        <p>There are two additional lines of code here, <code>count++</code> and <code>makeStudentID()</code>. The line <code>count++</code> increments the count of students by one each time a <code>Student</code> object is instantiated. At the same time, a <code>studentID</code> is created by taking the incremented value of <code>count</code> and adding 1000 to it; by adding 1000, the first <code>Student</code> is 1001, not just 1. (And seriously, who wants to be the first member of any club?) These few simple lines also highlight the importance of sequence in code instructions; within this method, we have sequential, procedural code in the line <code>count++.</code> It is not until <code>count</code> has been incremented that we create a <code>studentID</code>. Otherwise, we would have a <code>studentID</code> equal to the current number for <code>count</code>.</p>
+        <p>Whether or not we actually code a constructor, the Java compiler inserts a constructor anyway. This is in the form of the class name followed by empty parentheses. This is the <cite>default constructor</cite> or <cite>no-arg constructor</cite>. Care needs to be taken in allowing Java to use the default constructor, for reasons which will be explained in depth when we get to class inheritance. For now, just note that Java will look for a no-arg constructor in a superclass if there is one in a subclass; if one is not present, the code will not compile.</p>
+        <p>A class can have more than one constructor, and it is often convenient that it do so. We may wish to have more than one representation of a class object. To use this technique, the constructors must have different signatures. In other words, their names and parameters must differ. Let’s look at another constructor for our <code>Student</code> class. The previous constructor would be useful only in identifying a particular student. This behemoth includes all other essential information -- except for allergies, taste in music and food, things like that. But it has all the school minutae. </p><pre>public Student(int studentID, String firstName, String lastName, String </pre><pre>            address, String city, String state, String zip, String </pre><pre>            authorizedPickup, String homePhone, String cellPhone, </pre><pre>            String emergencyContact) {</pre><pre>    this.studentID = studentID;</pre><pre>    this.firstName = firstName;</pre><pre>    this.lastName = lastName;</pre><pre>    this.address = address;</pre><pre>    this.city = city;</pre><pre>    this.state = state;</pre><pre>    this.zip = zip;</pre><pre>    this.authorizedPickup = authorizedPickup;</pre><pre>    this.homePhone = homePhone;</pre><pre>    this.cellPhone = cellPhone;</pre><pre>    this.emergencyContact = emergencyContact;</pre><pre>    count ++;</pre><pre>    makeStudentID();</pre><pre>}</pre>
+        <p>As you can see, this is a much more complete description of a student than that created by the prior constructor. It also contains a novel element of code: the keyword <code>this</code>.</p>
+        <p class="HeadingRunIn" MadCap:autonum="1.9 ">the keyword this</p>
+        <p>There is a facility in Java which allows an argument to reference its own corresponding instance variable. It is the keyword <code>this</code>, used often in constructors. Let us assume, that in the lengthy constructor for <code>Student</code> above, that all the instance variables had been declared. To write the constructor, we could have created different parameter names to initialize each variable, i.e., <code>firstName</code> could have become <code>givenName</code> and <code>lastName</code> could have become <code>surname.</code>It is possible instead to use the syntax as written above, i.e., <code>this.firstName = firstName</code>, <code>this.lastName = lastName</code>.  The <code>this</code> keyword distinguishes the argument from the variable by the same name and prevents an incorrect self reference. The keyword <code>this</code> ensures that compiler points to the variable declared by that name, and not the corresponding argument passed from the parameter list. </p>
+        <p>Let’s consider that more closely. When a constructor uses parameters, they are passed as arguments that serve to initialize the corresponding variables. These variables have been previously named. When the variable name and argument reference are the same, the variable name is said to be <cite>shadowing</cite> the argument reference. The variable might appear to be assigned to itself. But that’s not what is happening. Functionally, the <code>this</code> keyword does the same thing as changing a parameter name to avoid argument shadowing. So when we write <code>this.firstName = firstName</code>, <cite>what we are doing is assigning the argument to the variable, not the variable to itself</cite>. Once the recognition that <code>this</code> points to the variable, not the argument, is scribed in the mind, the syntax becomes natural. In fact, it is more convenient than having to come up with a list of distinct parameters to initialize the instance variables of a constructor.</p>
+        <p>There are developers that believe argument shadowing is not a best practice. There seems nothing inherently wrong with it, however. The explicit use of the <code>this</code> keyword eliminates any ambiguity. It is a matter of personal preference and style. If the <code>this</code> keyword looks weird to you, there’s no need to use it. But get to know it, because best practice or not, a lot of developers do use it.</p>
+        <p class="HeadingRunIn" MadCap:autonum="1.10 ">access level modifiers</p>
+        <p>Up until now I have advised, Ignore the keyword <code>public</code>. It’s time to address it. Java has four levels of data access, three with keywords: <code>public</code>, <code>protected</code>, and <code>private</code>. The fourth -- the default -- has been given various names, the most descriptive of which is package-private. We haven’t considered Java packages yet, but suffice it to say for now that they are a way of bundling up the various classes of an application into distributable form. </p>
+        <p>The access level modifiers in most common use are <code>public</code> and <code>private</code>. Classes are usually <code>public</code>, except in the odd case where they are package-private. In general, data variables are <code>private</code>, while methods are <code>public</code>. Making data <code>private</code> is called <cite>data hiding</cite>, and is in general a best practice. We access hidden data indirectly, by calling it in methods. All data and methods are accessible within a class. Data specified as <code>private</code> are visible <cite>only</cite> within the class. <code>Private</code> is the most restrictive of the access level modifiers.</p>
+        <p>The next most restrictive is <code>protected</code>. <code>Protected</code> data are accessible both within the class and within subclasses, but not from other classes in the package, nor from other packages. There is a curious exception to this rule, however. If a subclass for some reason appears in another package, it may still be accessed from the main class. (insert cross reference)</p>
+        <p>The default, package-private, as it’s name would suggest, is accessible to all classes within the package. This includes both subclasses and other, unrelated classes. This implies care in packaging up classes to include only what is necessary. (insert cross reference) Note that is this is the Java default, there is no keyword.</p>
+        <p>Finally, the least restrictive access level modifier is <code>public</code>. Data classified as <code>public</code> may be called from any Java class, even one nominally unrelated or in a different package or application.</p>
+        <p class="HeadingRunIn" MadCap:autonum="1.11 ">accessors and mutators</p>
+        <p>It is often necessary to work with <code>private</code> data. As mentioned, <code>private</code> data are accessed by calling them through methods. These methods are referred to as accessors and mutators, or “getters and setters.” By using accessors and mutators, <code>private</code> data may be accessed, but that access is controlled. Uncontrolled access would allow users to manipulate data in ways which may be undesirable or even malicious, setting the number of students in the school to one million, for example. Getters and setters allow client code to either set the value of a variable, or to retrieve the current value of a variable. It is common for accessor and mutator methods to be created for each instance variable in a class, and in many cases the static variables as well. It is also quite common to see only an accessor, and not a mutator, where the data are necessary to perform certain calculations, but the value must not be reset from outside the class. Let’s look again at our <code>Student</code> class, complete with its accessors and mutators. This is long, but you don't need to study every line. It's just to give you a feel for a real class (no pun intended ... class. Get it?)</p><pre xml:space="preserve">public class Student {
+    
+    private static int count = 0;
+    private int studentID;
+    private String firstName;
+    private String lastName;
+    private String address;
+    private String city;
+    private String state;
+    private String zip;
+    private String authorizedPickup;
+    private String homePhone;
+    private String cellPhone;
+    private String emergencyContact;
+    
+    Student(String firstName, String lastName){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        count++; 
+        makeStudentID();
+        
+    }
+
+    public Student(int studentID, String firstName, String lastName, String 
+            address, String city, String state, String zip, String 
+                    authorizedPickup, String homePhone, String cellPhone, 
+                    String emergencyContact) {
+        this.studentID = studentID;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
+        this.city = city;
+        this.state = state;
+        this.zip = zip;
+        this.authorizedPickup = authorizedPickup;
+        this.homePhone = homePhone;
+        this.cellPhone = cellPhone;
+        this.emergencyContact = emergencyContact;
+        count ++;
+        makeStudentID();
+    }
+
+      
+     public final int makeStudentID(){
+         
+         return studentID = count + 1000; 
+    }
+    
+    public String getAuthorizedPickup() {
+        return authorizedPickup;
+    }
+
+    public void setAuthorizedPickup(String authorizedPickup) {
+        this.authorizedPickup = authorizedPickup;
+    }
+
+    public String getHomePhone() {
+        return homePhone;
+    }
+
+    public void setHomePhone(String homePhone) {
+        this.homePhone = homePhone;
+    }
+
+    public String getCellPhone() {
+        return cellPhone;
+    }
+
+    public void setCellPhone(String cellPhone) {
+        this.cellPhone = cellPhone;
+    }
+
+    public String getEmergencyContact() {
+        return emergencyContact;
+    }
+
+    public void setEmergencyContact(String emergencyContact) {
+        this.emergencyContact = emergencyContact;
+    }
+    
+    public int getStudentID() {
+        return studentID;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public String getZip() {
+        return zip;
+    }
+
+    public void setZip(String zip) {
+        this.zip = zip;
+    }
+
+    
+     public static int getCount() {
+        return count;
+    }</pre>
+        <p>Note the presence of both getter and setter methods for most variables. The exceptions here are for <code>count</code> and <code>studentID</code>, for which only getter methods have been written. The value of count is incremented each time a <code>Student</code> object is created, and a <code>studentID</code> object is generated at the same time. There is no need for these values to be altered from outside the class. However, both are accessible using their getter methods.</p>
+        <p>Note that setters are <code>void</code>, while getters have the return type of the variable. This is because setters merely set the state of the variable, while getters retrieve the current value. Setters and getters are an excellent illustration of the difference between <code>void</code> methods and those which include a <code>return</code> statement.</p>
+        <p class="HeadingRunIn" MadCap:autonum="1.12 ">instantiating objects of a class type</p>
+        <p>To use instance variables and methods, an object of the class type must first be instantiated. What we are doing when we instantiate an object is actually creating an object of that class. If we have a class called <code>hairbrush</code>, we would create an object of type "hairbrush." You can't actually brush your hair with it, but some people claim that you can use it for a permanent wave or a dye job. </p>
+        <p>The syntax for creating a class object is always the same:</p>
+        <ul>
+            <li>The name of the class</li>
+            <li>The identifier of the class object</li>
+            <li>An = sign</li>
+            <li>The keyword <code>new</code></li>
+            <li>The type of the object</li>
+            <li>The parameter list, if any</li>
+        </ul>
+        <p>So for our <code>hairbrush </code> class we would write, assuming parameters <code>String brand</code> and <code>String bristleType</code>:</p><pre xml:space="preserve">Hairbrush aHairbrush = new Hairbrush ("cheapBrand", "naturalBristles");</pre>
+        <p>And likewise for a <code>rectangle</code> class with parameters <code>int length</code> and <code>int width</code> we would write:</p><pre xml:space="preserve">Rectangle aRectangle = new Rectangle (3, 5);</pre>
+        <p class="HeadingRunIn" MadCap:autonum="1.13 ">overloading methods</p>
+        <p>It is possible in Java to have methods with the same name, provided that their parameter lists are different. This is referred to as <cite>method overloading</cite>. It is convenient when there is a class containing related methods. For example, the method <code>Math.abs</code>, which returns the absolute value of a number, accepts arguments of type <code>double</code>, <code>float</code>, and <code>long</code>. The idea of method overloading is similar to that of method signature, but with an important distinction. To differ in their signature, two methods must have different names, while to be overloaded, they must have the same name. In fact, that's what makes an overloaded method -- it has the same name as other methods in the same class.</p>
+        <p>You may be wondering how the compiler tells instances of overloaded methods apart in that case. The answer is that the unique parameter lists distinguish them.</p>
+        <p class="HeadingRunIn" MadCap:autonum="1.14 ">explicit invocation of a constructor</p>
+        <p>Constructors may be overloaded as well. Given their often lengthy parameter lists, they very often are. This is referred to as <cite>explicit invocation</cite> of a constructor, or <cite>chaining</cite>. If there are several constructors in a class, sometimes they are all chained together to avoid repeating code.</p><pre xml:space="preserve">public class TrainTimetable {
+    
+    int departure;
+    int arrival;
+    
+    public TrainTimetable (int departure, int arrival) {
+        this.departure = departure;
+        this.arrival = arrival;
+    }
+    
+    public TrainTimetable (TrainTimetable another) {
+        this(another.departure, another.arrival);
+    }
+    
+}</pre>
+        <p>In this example, we have created a <code>TrainTimetable</code> object called <code>another</code> in the second constructor. This object as used as a parameter in the second constructor. Then, by using the <code>this</code>keyword, we are able to call the first constructor from the second. </p>
+        <p>If a constructor does not take any parameters, then the <code>this</code> statement is followed by empty parentheses. We haven't seen many examples, but it not uncommon for a constructor not to take any parameters; the most obvious example is the default constructor, which is just the name of the class followed by empty parentheses. A common technique is to have a default constructor with the fewest number of parameters and to chain the remaining constructors. The application logic is built into the respective calling methods. </p>
+        <p>Here is another example of constructors calling other constructors.</p><pre xml:space="preserve">public class Rectangle {
+    private int x, y;
+    private int width, height;
+        
+    public Rectangle() {
+        this(0, 0, 2, 4);
+    }
+    public Rectangle(int width, int height) {
+        this(0, 0, width, height);
+    }
+    public Rectangle(int x, int y, int width, int height) {
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
+    }
+}</pre>
+        <p>In this example, there are three constructors: a no argument constructor, a two argument constructor, and a four argument constructor. The no argument constructor would ordinarily be initialized by application logic which specifies the Cartesian coordinates -- that is, the x and y coordinates -- for the four vertices of the rectangle. However, in the code as written, the no argument constructor calls the four argument constructor, which uses a single Cartesian coordinate defined by <code>int x</code> and <code>int y</code> as well as the width and height of the rectangle. The two argument constructor also calls the four argument constructor. Pay attention to the parameters. In the no arg constructor, <code>int x</code> and <code>int y</code> are initialized by the call to the four argument constructor using the values 0, 0, 2, and 4. The two argument constructor is initialized, by 0, 0 <code>int width</code> and <code>int height</code>. </p>
+        <p>What rectangles does this code actually create? The first constructor creates a rectangle which begins at the origin, 0, 0, and is 2 X 4.  The second constructor also begins at the origin, but we have to instantiate <code>int width</code> and <code>int height</code> to know the dimensions. The third constructor -- the four argument constructor -- initializes neither a vertex of the rectangle nor the width and height; we don't know what this rectangle looks like until we create it. For practice, and to see exactly how these chained constructors work, let's write code to instantiate rectangles from each constructor.</p><pre xml:space="preserve">public class TheRectangles {
+
+    public static void main(String[] args) {
+        
+    Rectangle constructorOne = new Rectangle (0, 0, 2, 4);
+    Rectangle constructorTwo = new Rectangle (0, 0, 3, 6);
+    Rectangle constructorThree = new Rectangle (2, 4, 3, 6);
+        
+    }
+}</pre>
+        <p>Our first rectangle is already defined by parameter values of the first constructor. The second has defined only that it begins at the origin; I instantiate <code>int width</code> and <code>int height</code> dimensions of 3 and 6. The third rectangle constructor has parameters specifying no actual values, just arguments. I arbitrarily give it an origin at 2, 4 and a width and height of 3 and 6.</p>
+        <p>The logic is the same in all these examples of a constructor calling another constructor. And we always follow exactly the same steps:</p>
+        <ul>
+            <li>The <code>this</code> keyword must appear in the first line of the body of the calling constructor</li>
+            <li>The arguments of the called constructor must appear in parentheses following <code>this</code></li>
+            <li>An instance variable of the class may not be called, but may only passed in as an argument of the calling method</li>
+            <li>An argument of the called method not appearing in the calling method must be initialized with a value</li>
+            <li>The line must terminate with a semi-colon</li>
+        </ul>
+        <p>This is not a simple topic, but the above five bullet points really do encapsulate it. Stick with them, and you will be fine. There is a specialized way to call another constructor when one class inherits from another, but we will defer that discussion until we consider inheritance. (insert cross reference)</p>
+        <p class="HeadingRunIn" MadCap:autonum="1.15 ">variable scope</p>
+        <p>A variable declared as part of a class is scoped to the class. A variable declared as part of a method is scoped to the method. Simple enough, but with profound practical implications.</p>
+        <p>For example, access outside of the class. The general practice of declaring data as <code>private</code>prevents such access except via a method with permission, but other access level modifiers will allow restricted access. You should be vigilant concerning data access.</p>
+        <p>The other case -- data scoped to a method -- is the one which tends to confuse beginners. Data scoped to a method are accessible <cite>only</cite> within that method. Once you fall through the closing brace of the method, you no longer have access to the variable. Let's look at an example.</p><pre xml:space="preserve">    int i;
+    int j;
+    int z;
+    
+    public int multiplyIntegers() {
+        
+        for(i = 1; i &lt;= 4; ++i){
+            for(j = 1; j &lt;= 4; ++j) {
+                z = i * j;
+                
+            }
+        }
+        System.out.println(z);
+        return z;
+    }
+}</pre>
+        <p>This code produces the value 16 for <code>z</code>. All variables are scoped to the class and accessible from anywhere inside this method, which is comprised of nested loops. When we scope variables locally -- that is, to the method -- things change in ways which are intuitive, but which you need to be cognizant of.</p><pre xml:space="preserve">public class Multiply {
+    
+    public int multiplyIntegers() {
+        
+        for(int i = 1; i &lt;= 4; ++i){
+            for(int j = 1; j &lt;= 4; ++j) {
+                int z = i * j;
+                
+            }
+        }
+        System.out.println(z);
+        return z;
+    }
+}</pre>
+        <p>This code will not compile. The compiler reports: "cannot find symbol, variable z." The problem is that <code>z</code> is now <cite>out of scope</cite>. Variable <code>z</code>is visible to the code only within the third set of braces, where it has been defined. It is scoped not only to the method, but to the particular part of the method in which it is declared. It is as "local" as local variables get. The print and return statements could be moved  inside the third set of braces, but then they would iterate while the loop iterates, and produce output like a multiplication table, for each iteration of <code>i * j</code>. This may not be the intended result. When<code> int z</code> is restored to class scope, things are fine again.</p><pre xml:space="preserve">public class Multiply {
+    
+    int z;
+    public int multiplyIntegers() {
+        
+        for(int i = 1; i &lt;= 4; ++i){
+            for(int j = 1; j &lt;= 4; ++j) {
+                z = i * j;
+                
+            }
+        }
+        System.out.println(z);
+        return z;
+    }
+}</pre>
+        <p> The value of <code>z</code> is 16. Since we are only interested in the value of <code>z</code>, there is no reason for <code>i</code> and <code>j</code> to be known outside the loop. These variables can remain scoped locally. The basic rule is: a variable is scoped to where it has been defined. Keeping this in mind while you code and debug will save no small amount of indigestion.</p>
+        <p class="HeadingRunIn" MadCap:autonum="1.16 ">the to_string method</p>
+        <p>This is a specialized method which is present in all classes. It applies not only to strings, but also to concatenation of String objects for printing. It is important to understand the <code>toString</code>in order to return String representations of your objects; it is void and called automatically when concatenating String objects for printing. Let's look at some code, without an explicit invocation of the <code>toString</code> method.</p><pre xml:space="preserve">public class ToothPaste {
+    
+    String brand;
+    String type;
+
+    public ToothPaste(String brand, String type) {
+        this.brand = brand;
+        this.type = type;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+}</pre><pre xml:space="preserve">public class ToothPasteTest {
+
+    public static void main(String[] args) {
+        
+        ToothPaste dentifrice = new ToothPaste ("colgate", "whitening");
+        System.out.println(dentifrice);
+    }
+}</pre>
+        <p>When this code is run, it produces the following puzzling output: <code>javaapplication106.ToothPaste@26420e44</code> <![CDATA[ ]]></p>
+        <p>This is a representation of the object we created, <code>dentifrice</code>, in system memory. Not terribly useful. What we want is output we can read, and that's where the <code>toString</code> method comes in. In the above code snippet, the <code>toString</code> method isn't there, and the result is just a memory address. Now let's try the code with the <code>toString </code>method added.</p><pre xml:space="preserve">public class ToothPaste {
+    
+    String brand;
+    String type;
+
+    public ToothPaste(String brand, String type) {
+        this.brand = brand;
+        this.type = type;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    @Override
+    public String toString() {
+        return "ToothPaste{" + "brand=" + brand + ", type=" + type + '}';
+    }
+}</pre>
+        <p> The output in the <code>ToothPasteTest</code> class is: <code>ToothPaste{brand=colgate, type=whitening}</code>. The difference is this code.</p><pre xml:space="preserve">@Override
+    public String toString() {
+        return "ToothPaste{" + "brand=" + brand + ", type=" + type + '}';
+    }
+}</pre>
+        <p>This is the <code>toString</code> method. There is notation here which we haven't seen before: <code>@Override</code>. As mentioned, the <code>toString</code> is already present in the class. We need to override it -- in other words, create our own version -- in order to get the String representation of our object <code>dentifrice</code>. Don't concern yourself too much for now with overriding methods. We'll get into that topic later (insert cross reference).</p>
+        <p class="HeadingRunIn" MadCap:autonum="1.17 ">classes and methods in action</p>
+        <p>Here is more complicated code to introduce you to methods as they actually appear in programs. It looks intimidating, but don’t worry about not understanding everything at first blush. I will explain minutely and thoroughly what every aspect of this code does. The point now is to see how a real-world method works, including object-oriented aspects such as data abstraction and encapsulation. </p><pre>public class FuelEconomyData {</pre><pre>    double fuelInput;</pre><pre>    double fuelConsumed;</pre><pre>    double velocity;</pre><pre>    double distance;</pre><pre>    double time;</pre><pre>    public FuelEconomyData(double fuelInput, double fuelConsumed, </pre><pre>            double velocity, double distance, double time) {</pre><pre>        this.fuelInput = fuelInput;</pre><pre>        this.fuelConsumed = fuelConsumed;</pre><pre>        this.velocity = velocity;</pre><pre>        this.distance = distance;</pre><pre>        this.time = time;</pre><pre>    }</pre><pre>    public double getFuelInput() {</pre><pre>        return fuelInput;</pre><pre>    }</pre><pre>    public void setFuelInput(double fuelInput) {</pre><pre>        this.fuelInput = fuelInput;</pre><pre>    }</pre><pre>    public double getDistance() {</pre><pre>        return distance;</pre><pre>    }</pre><pre>    public void setDistance(double theTrip) {</pre><pre>        theTrip = distance;</pre><pre>    }</pre><pre>public double fuelConsumed() {</pre><pre>    FuelGauge fuelGauge = new FuelGauge(20);</pre><pre>    fuelGauge.setFuelRemaining(10.0);</pre><pre>    fuelConsumed = FuelGauge.TANK_SIZE - fuelGauge.getFuelRemaining();</pre><pre>    System.out.println(fuelConsumed);</pre><pre>    return fuelConsumed;</pre><pre>    }</pre><pre>}</pre>
+        <p>This code, as the name suggests, calculates the consumption of fuel and returns it as a value of type <code>double.</code>This method also uses methods and objects from the <code>FuelGauge</code> class. To reduce the quantity of code, the <code>FuelGauge</code> class is not elaborated here. </p>
+        <p>At the top of the code is the class name, <code>FuelEconomyData</code>. This class contains a number of utility methods for calculating fuel consumption and economy. The one reproduced here, as its name suggests, calculates <code>fuelConsumed.</code>In line 2, the method is created, with the required information. We have a type, a method name, and parentheses, in this case with no parameters. In line 3, an object called <code>fuelGauge</code>, of type <code>FuelGauge</code>, is instantiated. Again, for now, do not worry about the access modifiers <code>public</code>. But watch out for the capitalization. It is something of a convention in Java to create objects with the same name as the class for the purpose of creating an object of a class type. The class object is written in lower camel case, while the class name is capitalized. This can be confusing if you are not alert to what is going on.</p>
+        <p>Here, the type <code>FuelGauge</code> takes a single parameter, <code>fuelRemaining.</code> Notice how data and methods are encapsulated. The <code>fuelGauge</code> object, with its parameter for <code>fuelRemaining</code>, knows nothing about the implementation in the <code>fuelConsumed</code> method; it could just as easily been used in another method. This separation of logic and implementation is the cardinal stamp of OO programming. </p>
+        <p>In this example we are starting out with a full tank. We “fill the tank” when we instantiate the <code>fuelGauge</code> object with 20. No units are specified, but we may assume gallons. We then determine the fuel remaining by calling the <code>setFuelRemaining</code> method on our newly-instantiated <code>fuelGauge</code> object. As discussed, to call a method on an object, you name the object, follow it by the dot operator, then follow that by the name of the method. Using the <code>setFuelRemaining</code> method which we have called, we set the amount of fuel remaining to 10 gallons. Finally, we are set to calculate the amount of fuel consumed. <code>fuelConsumed = FuelGauge.TANK_SIZE - fuelGauge.getFuelRemaining().</code> Note that this line of code calls <code>getFuelRemaining</code> on the object <code>fuelGauge.</code>The statement <code>FuelGauge.TANK_SIZE</code> is a call on the object <code>TANK_SIZE</code>. Don't worry if you can't see the <code>TANK_SIZE</code> object. It is in a class I&#160;have not reproduced here, the<code>FuelGauge</code> class. To call an object outside the current class, the syntax is similar to that which we have seen for calling class methods: the name of the class, followed by the dot operator, followed by the name of the object.</p>
+        <p>When this program is run, <code>fuelConsumed</code> returns a value of 10. What we’ve done is subtract <code>fuelRemaining</code> from <code>TANK_SIZE.</code> Verbose, seemingly, for a trivial result. Welcome to the land of Java! This is your first introduction to in-the-streets object-oriented programming; data and methods are abstracted out and encapsulated, each object and method assuming a specific function. There are more economical ways to achieve this result, perhaps, but Java makes for clean, correct code, which compensates for its occasional verbosity.</p>
+        <p>&#160;</p>
+        <p class="HeadingRunIn" MadCap:autonum="1.18 ">memory representation of objects</p>
+        <p>The way in which Java methods handles primitive types and objects is different in a subtle but crucial way. This is one of those areas where the practical consequences are well-understood, but the nomenclature diverges. I use the nomenclature found in the specification for Java 7, written by James Gosling and other members of the team that created the language. Whether a primitive or an object is called, the <i>value</i> is passed to the calling method. However, when a primitive is called, a copy of the primitive is made and passed to the calling method. This is called <i>deep copying</i>. When an object is called, only a copy of the memory reference to the object is passed to the calling method. This is called <i>shallow copying</i>. In Java, when an object is instantiated, a shallow copy is made. In fact, shallow copying is used except where code has been explicitly crafted to create a deep copy or the interface <code>cloneable</code> is used. We will explain more about copying objects below. (insert cross reference)</p>
+        <p>Shallow copying is employed primarily on grounds of computational economy. A reference to an object occupies far less memory space than the object itself. In particular in an OO language like Java, where objects proliferate, the overhead involved in deep copying every object would be calamitous. Primitives are far less computationally expensive. In fact, performance is enhanced by the decision of the Java develpers not to handle them like objects, except when a <i>wrapper class</i> is used . We will look at wrappers in greater detail later. For now, understand only that they are used to convert primitives to and from objects.</p>
+        <p>When the value of a reference is changed, the original object is changed. Let's look at code which demonstrates the point.</p><pre xml:space="preserve">public class Rectangle {
+    
+    public int width, height, area;
+
+    public Rectangle(int width, int height) {
+        this.width = width;
+        this.height = height;
+    }
+    
+    public int getWidth() {
+        return width;
+    }
+
+    public void setWidth(int width) {
+        this.width = width;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
+    }
+    public int areaRectangle (int width, int height) {
+        Rectangle rectangle = new Rectangle(0,0);
+        area = width * height;
+        System.out.println(area);
+        return area;
+    }
+}</pre><pre xml:space="preserve">
+    public static void main(String[] args) {
+    
+        Rectangle rectangle = new Rectangle(2, 4);
+        rectangle.setWidth(6);
+        rectangle.areaRectangle(rectangle.getWidth(), rectangle.getHeight());
+</pre><pre xml:space="preserve">}</pre>
+        <p>This program prints the value of 24 for <code>area</code>. This is intuitive, if it is understood that instantiating <code>rectangle</code> produces only a shallow copy. The call <code>rectangle.setWidth(6)</code> resets the value of <code>width</code>not only for the duration of the mutator method <code>setWidth</code>, but also outside that method. Else how much use would the mutator be? The result is intuitive even without thinking in terms of shallow copying.</p>
+        <p>Let's try a thought experiment. Suppose, instead of the object <code>width</code>, we had a literal of type <code>int</code>, an ordinary number. The code might read: <code>int num = 2</code>. Can we call a mutator method on an integer literal? Clearly not; the state of a literal is immutable. Again, the result is intuitive.</p>
+        <p>However, there are contexts in which the result is less obvious, though the principle is the same.</p><pre xml:space="preserve">public class Point {
+    
+    public int x;
+    public int y;
+       
+    public static void reset(Point point) {
+        point.x = 0;
+        point.y = 0;
+    } 
+}</pre><pre xml:space="preserve">public static void main(String[] args) {
+        
+        Point point = new Point();
+        point.x = 2;
+        point.y = 10;
+        point.reset(point);
+        System.out.println(point.x);
+    }
+}</pre>
+        <p>Here, things are changed a bit from the usual. We have a method in the <code>Point</code>class, the <code>reset</code> method, which is not strictly speaking a mutator method. Mutator methods, strictly speaking, are passed a single parameter, without any value. The <code>reset</code> method, by contrast, sets the values of <code>x</code> and <code>y</code> to zero. However, it acts like a mutator method. I hope that you can infer by now that when this application is run, it returns a value of 0 for<code> point.x</code>. Why? Because of the <code>point.reset(point)</code> call, which resets the value of <code>x</code> to zero.</p>
+        <h2>Packages</h2>
+        <p class="HeadingRunIn" MadCap:autonum="1.19 ">namespaces and the directory structure</p>
+        <p>Packages are a group of related classes which share the same <i>namespace.</i> This means that classes within the package can have the same name as classes outside the package without concern over naming collisions. Typically, each large piece of an application has its own package and namespace. For those of us using Netbeans or another top-tier IDE, the creation of packages is handled automatically. Each time we create a new application, the IDE puts it in its own package. When we create new classes, they are put in the same package, but in a directory different from that which holds the<code> main()</code> method. This is a form of encapsulation. It is considered a best practice to separate client and implementation code formally as well as logically.</p>
+        <p>Packages are named and created at the very top of a file. The only things which can precede a package declaration are white space or comments. Typically, lower case is used. The package uses the name of the class with the <code>main()</code>method. The name of the package is thus  the same as the name of the application.</p><pre xml:space="preserve">package therectangles;
+
+public class TheRectangles {
+
+    public static void main(String[] args) {
+    
+        Rectangle rectangle = new Rectangle(2, 4);
+        rectangle.setWidth(6);
+        rectangle.areaRectangle(rectangle.getWidth(), rectangle.getHeight());
+        
+    }
+}</pre>
+        <p>Packages have a close and somewhat complex connection to the directory structure. All the working files -- the .java files -- within a package must be directories of the same name. This need not correspond to the default directory structure, however; the package structure could possess its own tree structure within the computer's directory structure. This is a good way to create chaos, so don't do it. Java won't stop you from saving packages to directories with the wrong names, so stay on top of this if you are not using an IDE.</p>
+        <p>Packages are often assembled into subpackages, just as directories contain subdirectories. If you have browsed the Javadocs (the Java APIs published by Sun/Oracle), you have probably observed this structure. The packages and subpackages are of the general form: <i>thepackage.subpackage, thepackage.anothersubpackage, thepackage.anothersubpackage.foo.</i></p>
+        <p>Us do-it-the-easy-way IDE&#160;users also avoid the problem of the compiler searching for the path to compile packages; the IDE automatically creates directories with the correct package names. However, it is useful to understand what's taking place under the hood. By default, Java will look for packages beneath the current working directory. If your packages are not located there, you must set the <i>classpath</i> variable to point the compiler to the correct directory.You can set the CLASSPATH environmental variable in your operating system or ~classpath can be set from the command line.  Do yourself a favor and use an IDE. Go the command line route only if you are very determined to roll your own, and refer to the Internet or one of the many fine reference books available on Java for step-by-step instructions on compiling your classes.</p>
+        <p class="HeadingRunIn" MadCap:autonum="1.20 "> importing packages and classes</p>
+        <p>It is possible to import portions of exterior classes or entire classes, which makes it convenient to access their methods. The import statement appears underneath the package statement and before the class declaration. A package may be imported in its entirety using the following syntax.</p><pre xml:space="preserve">import java.Math.*;</pre>
+        <p>Or, only a portion of the class may be imported.</p><pre xml:space="preserve">import java.Math.BigDecimal;</pre>
+        <p>There is some memory overhead, so best practice is to import only those classes and those portions of classes that you will be using.</p>
+        <p>&#160;</p>
+        <p>&#160;</p>
+        <p>&#160;</p>
+    </body>
+</html>

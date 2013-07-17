@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultProject
+  Version="1"
+  MasterStylesheet="/Content/Resources/Stylesheets/Bookstyle.css"
+  MasterPageLayout="/Content/Resources/PageLayouts/Default.flpgl"
+  SourceControlBound="false"
+  Comment="This template contains a minimum number of content and project files, including a single topic. It is the best choice for those who want to begin with a skeleton project."
+  IncludePattern="*.htm;*.html"
+  AutoExcludeNonTaggedFiles="false"
+  IncludeLinkedFiles="false"
+  DeleteStale="false"
+  AutoSync="true"
+  LastImport="2013-07-15T10:32:09.8852177-04:00">
+  <Files>
+    <Url
+      Source="file:///C:/Users/Andrew/Documents/My Projects/Chapter three/Chapter three.flprj"
+      AbsoluteSource="file:///C:/Users/Andrew/Documents/My Projects/Chapter three/Chapter three.flprj" />
+  </Files>
+  <ExcludedFiles>
+    <Url
+      Source="../../Content/Chapter Three/Chapter Three.htm"
+      AbsoluteSource="file:///C:/Users/Andrew/Documents/My Projects/Chapter one/Content/Chapter Three/Chapter Three.htm" />
+  </ExcludedFiles>
+  <CollectedSourceFiles>
+    <Url
+      Source="../../../Chapter three/Content/Chapter Three/Chapter Three.htm"
+      AbsoluteSource="file:///C:/Users/Andrew/Documents/My Projects/Chapter three/Content/Chapter Three/Chapter Three.htm" />
+  </CollectedSourceFiles>
+  <SkippedSourceFiles />
+  <GeneratedFiles>
+    <Url
+      Source="../../Content/Chapter Three/Chapter Three.htm"
+      TimeStamp="7/15/2013 8:47:48 AM" />
+  </GeneratedFiles>
+</CatapultProject>

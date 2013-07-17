@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="787.4" MadCap:lastWidth="627">
+    <head>
+        <link href="../Resources/TableStyles/Format_A.css" rel="stylesheet" MadCap:stylesheetType="table" />
+        <link href="../Resources/Stylesheets/Bookstyle.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1 class="title">Program Control Flow</h1>
+        <p>All computer programs, in every language, should have only three fundamental control types: sequential, iterative, and boolean. This paradigm was proposed by Edsger Dijkstra, a Dutch computer scientist, in 1970, and it is the dominant paradigm today. Dijkstra was revolting against the ubiquitous use of the “go to” statement, which redirects the programmer from one part of an application to another, and which has been found empirically to lead to programmer error. Jumping around in a program is difficult for the brain to manage; it has the effect of making elements proximate in meaning remote in time; it takes time to make the jump. </p>
+        <p>The most elementary programming paradigm is sequential, one statement following another. Java makes limited use of sequential statements; they may only be used inside methods. This reflects the object-oriented nature of the language, which wraps, or encapsulates, code.</p>
+        <h1>Sequential Control</h1>
+        <p>This is what most non-programmers probably think of when envisioning a computer program. Statements simply follow one another and are executed serially. Each statement builds on the statements prior, and the computer runs them in the order written. Example:</p><pre xml:space="preserve">int netIncome;</pre><pre xml:space="preserve">int grossIncome = 50_000;</pre><pre xml:space="preserve">int homeMortage = 6,500;</pre><pre xml:space="preserve">int medicalExpense = 4000;</pre><pre xml:space="preserve">int tuition = 11_000;</pre><pre xml:space="preserve">int totalDeductions = homeMortage + medicalExpense + tuition;</pre><pre xml:space="preserve">netIncome = grossIncome - totalDeductions;</pre>
+        <h1>Boolean Control</h1>
+        <p class="HeadingRunIn" MadCap:autonum="1.1 ">boolean logic</p>
+        <p>Boolean control uses branching and if/then logic. It is occasionally referred to as “selection,” as the program selects from among various outcomes. Statements execute depending upon their evaluation as <code>true</code> or <code>false</code>. Recall the example from Chapter One: you may order a drink if you are 21 and have ID to prove it. Imagine a guy in a bar. If drinking were programming -- and many believe that it is -- and if the patron were of age with proper ID, the program would select the statement “give the guy his Mojito.” Suppose, on the other hand, that the ID had been made using Crayola. The bartender, having seen that kind of thing before, would evaluate “has ID” to <code>false</code>. His internal program would select the statement, “Get out of the bar before I call security.” To make these kinds of comparisons, Java provides the <cite>relational operators.</cite> <![CDATA[ ]]></p>
+        <table class="TableStyle-Format_A" style="width: 576px;caption-side: top;mc-table-style: url('../Resources/TableStyles/Format_A.css');" cellspacing="0">
+            <caption valign="top" style="padding-bottom: 6pt;">
+                <p class="TableTitle">&#160;</p>
+            </caption>
+            <col width="89px" class="TableStyle-Format_A-Column-Column1" />
+            <col width="487px" class="TableStyle-Format_A-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Format_A-Head-Header1">
+                    <td class="TableStyle-Format_A-HeadE-Column1-Header1">
+                        <p class="CellHeading">Relational Operator</p>
+                    </td>
+                    <td class="TableStyle-Format_A-HeadD-Column1-Header1">
+                        <p class="CellHeading">Meaning</p>
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Format_A-Body-Body1">
+                    <td class="TableStyle-Format_A-BodyH-Column1-Body1">
+                        <p class="CellBody">&gt;</p>
+                    </td>
+                    <td class="TableStyle-Format_A-BodyG-Column1-Body1">
+                        <p class="CellBody">Return true if left operand greater than right. Else, return false.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Format_A-Body-Body1">
+                    <td class="TableStyle-Format_A-BodyE-Column1-Body1">
+                        <p class="CellBody">&lt;</p>
+                    </td>
+                    <td class="TableStyle-Format_A-BodyD-Column1-Body1">
+                        <p class="CellBody">Return true if left operand less than right. Else, return false.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Format_A-Body-Body2">
+                    <td class="TableStyle-Format_A-BodyH-Column1-Body2">
+                        <p class="CellBody">==</p>
+                    </td>
+                    <td class="TableStyle-Format_A-BodyG-Column1-Body2">
+                        <p class="CellBody">Return true if operands are equal. Else, return false.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Format_A-Body-Body2">
+                    <td class="TableStyle-Format_A-BodyE-Column1-Body2">
+                        <p class="CellBody">&gt;=</p>
+                    </td>
+                    <td class="TableStyle-Format_A-BodyD-Column1-Body2">
+                        <p class="CellBody">Return true if left operand greater than or equal to right. Else, return false.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Format_A-Body-Body1">
+                    <td class="TableStyle-Format_A-BodyH-Column1-Body1">
+                        <p class="CellBody">&lt;=</p>
+                    </td>
+                    <td class="TableStyle-Format_A-BodyG-Column1-Body1">
+                        <p class="CellBody">Return true if left operand less than or equal to right. Else, return false.</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Format_A-Body-Body1">
+                    <td class="TableStyle-Format_A-BodyB-Column1-Body1">
+                        <p class="CellBody">! =</p>
+                    </td>
+                    <td class="TableStyle-Format_A-BodyA-Column1-Body1">
+                        <p class="CellBody">Return true if operands unequal. Else, return false.</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>For joining, disjoining, or negating operands, Java provides the <cite>logical operators,</cite> or <cite>boolean operators</cite>.</p>
+        <table class="TableStyle-Format_A" style="width: 443px;caption-side: top;mc-table-style: url('../Resources/TableStyles/Format_A.css');" cellspacing="0">
+            <caption valign="top" style="padding-bottom: 6pt;">
+                <p>&#160;</p>
+            </caption>
+            <col width="167px" class="TableStyle-Format_A-Column-Column1" />
+            <col width="276px" class="TableStyle-Format_A-Column-Column1" />
+            <thead>
+                <tr class="TableStyle-Format_A-Head-Header1">
+                    <td class="TableStyle-Format_A-HeadE-Column1-Header1">
+                        <p class="CellHeading">Logical Operator</p>
+                    </td>
+                    <td class="TableStyle-Format_A-HeadD-Column1-Header1">
+                        <p class="CellHeading">Meaning</p>
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="TableStyle-Format_A-Body-Body1">
+                    <td class="TableStyle-Format_A-BodyH-Column1-Body1">
+                        <p class="CellBody">&amp;</p>
+                    </td>
+                    <td class="TableStyle-Format_A-BodyG-Column1-Body1">
+                        <p class="CellBody">Logical AND</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Format_A-Body-Body1">
+                    <td class="TableStyle-Format_A-BodyE-Column1-Body1">
+                        <p class="CellBody">|</p>
+                    </td>
+                    <td class="TableStyle-Format_A-BodyD-Column1-Body1">
+                        <p class="CellBody">Logical OR</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Format_A-Body-Body2">
+                    <td class="TableStyle-Format_A-BodyH-Column1-Body2">
+                        <p class="CellBody">^</p>
+                    </td>
+                    <td class="TableStyle-Format_A-BodyG-Column1-Body2">
+                        <p class="CellBody">disjunctive (exclusive) OR (XOR)</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Format_A-Body-Body2">
+                    <td class="TableStyle-Format_A-BodyE-Column1-Body2">
+                        <p class="CellBody">&amp;&amp;</p>
+                    </td>
+                    <td class="TableStyle-Format_A-BodyD-Column1-Body2">
+                        <p class="CellBody">Conditional AND</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Format_A-Body-Body1">
+                    <td class="TableStyle-Format_A-BodyH-Column1-Body1">
+                        <p class="CellBody">||</p>
+                    </td>
+                    <td class="TableStyle-Format_A-BodyG-Column1-Body1">
+                        <p class="CellBody">Conditional OR</p>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Format_A-Body-Body1">
+                    <td class="TableStyle-Format_A-BodyB-Column1-Body1">
+                        <p class="CellBody">!</p>
+                    </td>
+                    <td class="TableStyle-Format_A-BodyA-Column1-Body1">
+                        <p class="CellBody">Logical NOT</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>In general, the logical forms from the table above function the same way as the conditional forms. Binary operands must both evaluate to <code>true</code> for the statement to be <code>true</code> when the AND operator is used, whether compared using the conditional or logical AND. The conditional OR is likewise similar to the logical OR. If either operand evaluates to <code>true</code>, the statement is <code>true</code>; if both are <code>true</code> the statement evaluates to <code>true</code>; and if both are <code>false</code> the statement evaluate to <code>false</code>.</p>
+        <p>However, the conditional operators have additional, Java-specific functions. In the case of the conditional AND, the right hand operand is not evaluated when the left hand operand evaluates to <code>false</code><cite style="font-family: 'Times New Roman Baltic';font-style: italic;">.</cite> This speeds up the execution of code, and it can serve as a check which forces the evaluation of an expression before it executes, thus avoiding error conditions:</p><pre>if(divisor != 0 &amp;&amp; dividend / divisor);</pre>
+        <p>will never reach the division in the second operand if the divisor is equal to zero. The best practice is to default to the conditional forms for these reasons. The only purpose of the logical form in Java is to force execution of the second operand <cite>even where the first operand evaluates to false.</cite></p><pre>if(a &lt; b &amp; ++b) {</pre><pre>b * c;<br />}</pre>
+        <p>forces the increment of b in the second operand <cite>whether or not a &lt; b. </cite>In effect, the meaning of AND is changed to something resembling the colloquial meaning: AND becomes an additive, not a logical condition. This is confusing, especially since it is called the “logical” AND. It is logical, but alien to conventional logic, which assigns a different meaning to the operator AND. There is no conventional logical form which is merely additive, and we are accustomed to thinking in terms of ordinary logic. AND is <cite>inherently</cite> conditional in ordinary logic. So the Java “logical” forms adds flexibility, but caution: it really means what it says. “I’ll go to the store AND pick up the dog from groomer.” Even if you don’t go to the store, and the statement is <code>false</code>, you still pick up the dog from the groomer. Good for the dog; tricky for the mind; and not my cup of tea as regards the programming language.</p>
+        <p>The disjunctive XOR functions as one would expect. One operand must be <code>true</code> and one <code>false</code> for the expression to evaluate to <code>true</code>. This is as opposed to the conditional OR, which is also like colloquial English, and has a meaning of and/or. As mentioned above, both operands may be <code>true</code> in the conditional OR and the expression evaluate to <code>true</code>. Not in the case of XOR.</p>
+        <p>Finally, the logical NOT. This is the only boolean operator which functions on a <cite>unary</cite>, or single operand. It simply negates the operand. This too is intuitive. </p><pre>int child = 14;</pre><pre>int senior = 65;</pre><pre>int person = 35;</pre><pre>if (!(person &lt;= child) &amp;&amp; (person &gt;= senior));</pre>
+        <p>Our anonymous, thirty-something person receives no child or senior discount for admission to the movie. The NOT operator says so, and there is no appeal.</p>
+        <p>The next snippet of code introduces two important concepts in Java, the <cite>statement block</cite> and the use of curly braces to open and close statement blocks. Statement blocks are lines of code which are treated as a logical unit. Boolean expressions are often followed by statement blocks, though they may also be followed by a single line of code. Here’s how we might purchase our drink, using boolean logic.</p><pre>int moneyInWallet = 10;</pre><pre>int costOfBeer = 6;</pre><pre>int moneyForMoreBeer;</pre><pre>int age = 21;</pre><pre>boolean haveID = true;</pre><pre>    if (moneyInWallet &gt;= costOfBeer &amp;&amp; age &gt;= 21 &amp;&amp; haveID != false){</pre><pre>        int change = moneyInWallet - costOfBeer;</pre><pre>        moneyForMoreBeer = moneyInWallet % costOfBeer;</pre><pre>    }</pre>
+        <p>Note the statement block. If the boolean statement evaluates to <code>true</code>, the code in the block executes. If <code>false</code>, the code in the block is skipped, and the next statement in the program would execute. Since the <code>if</code> statement in this example evaluates to <code>true</code>, the program goes on to calculate the statements in the block, how much change comes back, and how much money is available to buy more beer (which is the modulus).</p>
+        <p class="HeadingRunIn" MadCap:autonum="1.2 ">the else statement</p>
+        <p>What happens if a boolean statement evaluates to false? The next block or statement does not execute. What if we do want it to execute? Enter the <code>else</code> statement. </p><pre>int child = 14;</pre><pre>int senior = 65;</pre><pre>int person = 35;</pre><pre>int price = 13;</pre><pre>if (!(person &lt;= child) &amp;&amp; (person &gt;= senior)){</pre><pre>    price *= 1;</pre><pre>} else {</pre><pre>    price *=0.5;</pre><pre>}</pre>
+        <p>Our unfortunate thirty-something still pays the full ride, but if he were a child or a senior, he would get 50% off (which does little to ameliorate the indignities of youth or age).</p>
+        <p class="HeadingRunIn" MadCap:autonum="1.3 ">the switch statement</p>
+        <p>Many developers will use multiple <code>else</code> statements, but Java provides an elegant alternative: the switch statement. The switch statement is not, strictly speaking, boolean. It provides a series of choices, which eliminates the need to use a long series of if/else statements.</p>
+        <p>The following code is more complicated than that which we have seen so far, but it nicely illustrates the switch statement. This application calculates the day of the week for any date in history. By substituting values for <code>month</code>, <code>date</code>, and <code>year</code>, it is possible to return the day for any input date.</p><pre>int month = 4;</pre><pre>int date = 17;</pre><pre>int year = 2035;</pre><pre>int y_0 = year - (14 - month)/12;</pre><pre>int x = y_0 + y_0 /4 - y_0/100 + y_0 /400;</pre><pre>int m_0 = month + 12 * ((14 - month) / 12) - 2;</pre><pre>int d_0 = (date + x + (31 * m_0) / 12) % 7;</pre><pre>switch(d_0){</pre><pre>    case 0:</pre><pre>        System.out.println("Sunday");</pre><pre>        break;</pre><pre>    case 1:</pre><pre>        System.out.println("Monday");</pre><pre>        break;</pre><pre>    case 2:</pre><pre>        System.out.println("Tuesday");</pre><pre>        break;</pre><pre>    case 3:</pre><pre>        System.out.println("Wednesday");</pre><pre>        break;</pre><pre>    case 4:</pre><pre>        System.out.println("Thursday");</pre><pre>    case 5:</pre><pre>        System.out.println("Friday");</pre><pre>    case 6:</pre><pre>        System.out.println("Saturday");</pre><pre>        break;</pre>
+        <p>This could as easily have been coded using a series of <code>else</code> statements, and in fact another version of the code I wrote did exactly that. Many developers would not bother with the switch. But apart from elegance, the switch provides computational economy. With the switch, there is no need to test each statement individually against a set of boolean conditions. The switch statement executes sequentially following the prior line of code; there is less computation involved. The switch is appropriate only when there is a single condition which can become the basis of a switch statement; if multiple conditions must be satisfied, use the <code>else</code> form.</p>
+        <p>Note the general form of the switch statement. The selection in the switch statement reflects the value placed in the parentheses which precede it. In this case, the value is <code>int d_0</code>, which represents the day of the week as calculated. Statements are broken out into discrete, numbered cases, followed by the <code>break</code> statement, which instructs the program to move onto the next case. Later in this chapter, we will see that the <code>break</code> statement has other purposes. (insert cross reference) When this application is run for 4/17/2035, it returns <code>Tuesday</code>.</p>
+        <h1>Loops</h1>
+        <p>We come now to perhaps the most consequential control statement: the loop. It is looping which enables code to perform the iterative computations impossible to perform any other way. Loops do the heavy lifting.</p>
+        <p>Loops are an involved topic and, rather than provide a dilute, top-level view of their operation, we are going to go into them in detail.</p>
+        <p>Even experienced developers find complex loops a challenge. That’s because there are no rules, simple or complex, to apply in rote fashion. The task is analytical. It depends upon the semantics of any particular loop, and there is no substitute for correct, logical coding. </p>
+        <p class="HeadingRunIn" MadCap:autonum="1.4 ">the for loop</p>
+        <p>Loops test variables over a range of values. Depending upon the loop, they terminate either when they reach a limit or when a certain condition is satisfied, e.g, a solution is found or any further iterations would be out of range.</p>
+        <p>The most common loop is the <cite>for loop</cite>, also known as the <cite>numerical for loop</cite> because of its utility when numerical computation is involved. The for loop is of the general form:</p><pre xml:space="preserve"><code>for(starting value; limit; iteration value) {</code></pre><pre xml:space="preserve">    Statement or statement block;</pre><pre xml:space="preserve">}</pre>
+        <p>Let’s examine a concrete example. Suppose we were designing a watch. The second hand has to count sixty seconds to make a minute. This could be coded as:</p><pre>int second = 0;</pre><pre>for(int i = 1; i &lt;= 60; i++) {</pre><pre>    second += 1;</pre><pre>}</pre>
+        <p>This loop returns the value <code>second = 60</code>. The first term is the <cite>starting value</cite> or <cite>initial value. </cite>It is customary to use <code>i</code> for the variable in a for loop, though some people prefer <code>start</code>, or another, more descriptive variable name. Note also that the variable <code>i</code>, which is used solely inside the counter, is initialized inside the counter. This is referred to as the <cite>scope</cite> of the variable. It is not uncommon for variables to be scoped to methods, and therefore not known to the program outside the method.</p>
+        <p>This loop is doing what we want it to. It simply counts up the seconds to 60. Note that the variable <code>int second</code> has to be initialized to zero. This a <cite>boundary condition</cite>, and it is easy to make a mistake. If a loop is returning a value too large or too small by a value related to the increment, your nose should tell you that it’s probably a boundary condition error.</p>
+        <p>The second term, <code>i &lt;= 60</code>, is the limit. This must be a boolean value, and is always of the form <code>&lt;, &gt;, &lt;=,</code>or <code>&gt;=</code>. Note that it cannot be <code>=</code>. Not only is this not a relational operator, it is a logical error. The loop must iterate, not simply execute once for a determined value. However, the logical operator == can be a valid limit. It is rarely seen, however.</p>
+        <p>The third term is the <cite>increment</cite>. Most often, this is of the form <code>++</code>, although it may also be <code>--</code>, or even use one of the arithmetic operators, <code>+=</code> for example, if you wish to increment by a value other than 1.</p>
+        <p>Statement blocks may be nested, one inside the other. This is frequently done using for loops. Nested loops are a good illustration of loop logic.</p><pre>int second = 0;</pre><pre>int minute = 0;</pre><pre>for(int i = 1; i &lt;= 60; i ++) {</pre><pre>    minute += 1; {</pre><pre>    for (int j = 1; j &lt;= 60; j++){</pre><pre>        second += 1;</pre><pre>        }</pre><pre>    }</pre><pre>}</pre>
+        <ul>
+            <li>Our clock is now counting both minutes and seconds, returning 60 seconds for each minute.</li>
+            <li>Let’s pretend that we are the computer, and step through the execution of these loops.</li>
+            <li> The outer loop is initialized to 1. </li>
+            <li> Control passes to the inner loop.</li>
+            <li> The inner loop is initialized to 1.</li>
+            <li> The inner loop calculates <code>j</code> from the current value up to the limit of 60.</li>
+            <li> Control passes again to the outer loop, which is incremented and re-initialized.</li>
+            <li> The process repeats until the outer loop reaches its limit of 60.</li>
+        </ul>
+        <p>
+            <br />In fact, a clock is a very nice illustration of the way nested loops work. The crucial logic is that the inner loop runs from the current value of <code>j</code> ... <code>limit</code> for every iteration of the outer loop. That’s why it works; there are sixty seconds to every minute; sixty iterations of the inner loop for every iteration of the outer loop. </p>
+        <p>Here’s another example of a nested loop, one that calculates factorials. To jog your memory, a factorial is the product of numbers 1 ... <cite>n</cite>. It is written <cite>n</cite>! Factorials are useful for calculating how many ways objects can be arranged and for other permutations. </p><pre>int limit = 10;</pre><pre>int factorial;</pre><pre>&#160;</pre><pre>for (int i = 1; i &lt;= limit; i++) {</pre><pre>    factorial = 1;</pre><pre>&#160;</pre><pre>    for (int factor = 2; factor &lt;= i; factor++) {</pre><pre>            factorial *= factor;</pre><pre>    }</pre>
+        <p>When run, this program produces the following output:</p><pre>1</pre><pre>2</pre><pre>6</pre><pre>24</pre><pre>120</pre><pre>720</pre><pre>5040</pre><pre>40320</pre><pre>362880</pre><pre>3628800</pre>
+        <p>This program declares two variables of type <code>int</code>, <code>limit</code> and <code>factorial</code>. The logic is subtly different from the watch example. The variable <code>factorial</code> stores the result with each iteration of the outer loop. The calculation is performed in the inner loop. The variable <code>factor</code> is incremented up to the current value of <code>i</code>, then multiplied by the current value of <code>factorial</code>. Note the boundary condition in the inner loop; <code>factor</code> is initially set to 2 because 1 * 2 = 2. Remember, after initializing the outer loop, control passes to the inner loop. While the specific implementation may differ, nested for loops always follow the same sequence of initializing the outer loop, running the inner loop up to the limit, incrementing the outer loop, then running the inner loop again. </p>
+        <p>The for loop is flexible in form, and need not follow the convention of initialization, limit, and increment; some of these values may be declared in the body of the loop. However, the two semi-colons are required.</p><pre>int second = 0;</pre><pre>for (int i = 1; i &lt;= 60;){</pre><pre>    i++;</pre><pre>    second ++;</pre><pre>}</pre>
+        <p>Note that the increment appears in the body of loop. The logic is the same. </p>
+        <p>Also, more than one variable may be used in the initialization statement of a loop. Again, the two semi-colons are essential syntax. Multiple variables are separated by a comma.</p><pre>for (int i = 0, j = 5; i &lt; 20; i++, j+= 5) {</pre><pre>    int z = i * j;</pre><pre>}</pre>
+        <p>Note as well the separate increment and decrement values for <code>i</code> and <code>j</code>.</p>
+        <p class="HeadingRunIn" MadCap:autonum="1.5 ">the while loop</p>
+        <p>The <code>for</code> loop is useful when we know how many times the loop is to run; this value becomes the limit of the loop. A <code>while</code> loop is somewhat different. It may also be used when the number of iterations is not known in advance. The <code>while</code> loop is of the general form:</p><pre>while(boolean expression) {</pre><pre>    Statement or statement block;</pre><pre>}</pre>
+        <p>The astute reader will notice the resemblance to the boolean <code>if</code> statement, the only difference being substitution of the keyword <code>while</code>. However, the semantics are entirely different. In effect, the <code>while</code> loop is a series of <code>if</code> statements. The <code>while</code> loop continues to run as long as the boolean expression is <code>true</code>; when it is <code>false</code>, program control passes to the next statement following the loop. While the control in a for loop is known as the limit, the boolean condition which controls a while loop is known as the <cite>sentinel.</cite> Let’s look at an example of a <code>while</code> loop.</p>
+        <p>This program calculates powers of two.</p><pre>int n = 10;</pre><pre>double v = 1;</pre><pre>int i = 0;</pre><pre>while (i &lt;= n)</pre><pre>    {</pre><pre>        v = 2 * v;</pre><pre>        i ++;</pre><pre>    }</pre>
+        <p>This program takes the value <code>n</code> and produces values that are less than or equal to 2<span class="_Override" style="font-size: 80%;vertical-align: super;">n</span>. Notice that in this while loop, <code>i</code> is incremented in the body of the loop. The loop is initialized at zero, but is incremented by 1 with each iteration. It continues to run until <code>i</code> is less than or equal to <code>n</code>. The program produces the output:</p><pre>1.0</pre><pre>2.0</pre><pre>4.0</pre><pre>8.0</pre><pre>16.0</pre><pre>32.0</pre><pre>64.0</pre><pre>128.0</pre><pre>256.0</pre><pre>512.0</pre><pre>1024.0</pre>
+        <p>The boolean condition makes the while loop extremely flexible and suitable when we want the loop to run so long as the boolean condition is <code>true</code>. </p>
+        <p class="HeadingRunIn" MadCap:autonum="1.6 ">the do-while loop</p>
+        <p>This is much the same as the while loop, except that the boolean expression is executed at the bottom of the statement, not at the top. It looks like:</p><pre>do {</pre><pre>Statement or statement block;</pre><pre>} while(boolean statement)</pre>
+        <p>The purpose is to force the body of the loop to run at least once. With a while loop, if the initial condition evaluates to <code>false</code>, control passes immediately outside of the loop. Our aspiring drinker, about to turn 21, can benefit from the do-while loop.</p><pre>int age = 20;</pre><pre>boolean drink = false;</pre><pre>do {</pre><pre>    age ++;</pre><pre>    drink = true;</pre><pre>} while(age &gt; 20 &amp;&amp; age &lt; 22);</pre>
+        <p>When the conditional statement is evaluated for the first time, <code>age</code> is <code>20</code>, hence <code>drink</code> evaluates to <code>false</code>. The next time the loop runs, <code>age</code> has been incremented to <code>21</code>, and <code>drink</code> evaluates as <code>true</code>. If the conditional statement had appeared at the top of this code, as in the conventional <code>while</code> loop, <code>age</code> would have evaluated to <code>20</code>, the statement would have evaluated to <code>false</code>, and control would have passed to the next statement following the loop. The <code>while</code> loop is much more common than the <code>do-while</code> loop, which is reserved for the odd instance when the program requires that body statements execute prior to evaluating the conditional statement.The conditional statement is written as it is, with <code>22</code> as a boundary, in order to keep the loop from iterating past <code>21</code>. With either <code>while</code> or <code>do-while</code> loops, the conditional statement must terminate to avoid an infinite loop. That is the sentinel function mentioned previously.</p>
+        <p class="HeadingRunIn" MadCap:autonum="1.7 ">the continue and break statements</p>
+        <p>Java does not make use of the “go to” statement, but the break and continue statements provide a way to control the execution of a loop and, where indicated, exit the loop.</p>
+        <p>Suppose for example that you wanted to write an application that counts to 25, but you wanted to skip numbers below five.</p><pre>int sum = 0;</pre><pre>for (int i = 1; i &lt;= 25; ++i) {</pre><pre>    if (i &lt;= 5) {</pre><pre>        continue;</pre><pre>        }</pre><pre>    sum += i;</pre><pre>    System.out.println(i);</pre><pre>    }</pre>
+        <p>This application produces the following output.</p><pre>6</pre><pre>7</pre><pre>8</pre><pre>9</pre><pre>10</pre><pre>11</pre><pre>12</pre><pre>13</pre><pre>14</pre><pre>15</pre><pre>16</pre><pre>17</pre><pre>18</pre><pre>19</pre><pre>20</pre><pre>21</pre><pre>22</pre><pre>23</pre><pre>24</pre><pre>25</pre>
+        <p>The <code>break</code> statement simply exits the loop; it does not continue execution after evaluating the conditional. Here’s the prior program re-written using the <code>break</code> statement.</p><pre>int sum = 0;</pre><pre>for (int i = 1; i &lt;= 25; ++i) {</pre><pre>    if (i == 20) {</pre><pre>        break;</pre><pre>    }</pre><pre>sum += i;</pre><pre>}</pre>
+        <p>The loop is exited immediately upon reaching the <code>break</code> statement. The following output is produced.</p><pre>1</pre><pre>2</pre><pre>3</pre><pre>4</pre><pre>5</pre><pre>6</pre><pre>7</pre><pre>8</pre><pre>9</pre><pre>10</pre><pre>11</pre><pre>12</pre><pre>13</pre><pre>14</pre><pre>15</pre><pre>16</pre><pre>17</pre><pre>18</pre><pre>19</pre>
+        <p>The <cite>labeled continue</cite> statement breaks out of an inner loop and transfers control back to the outer loop, at the line indicated by the label. Note that the labeled continue statement doesn’t just skip a single iteration of the loop, but terminates execution of the inner loop altogether. In this regard it resembles a special case of the <code>break</code> statement.</p>
+        <p>You may recall from our discussion of the <code>switch</code> statement the use of the <code>break</code> statement to switch between cases. The labeling of the outer loop is similar to the <code>switch</code> statement <code>break</code> in that it, too, uses a colon to mark the labeled line.</p>
+        <p>Suppose that we want to change our clock from the prior example into a stop watch. After a 30 second interval, we want control to return to the outer loop. As you will recall, the outer loop is often a counter with nested loops. </p><pre>int second = 0;</pre><pre>int minute = 0;</pre><pre>OuterLoop:</pre><pre>for(int i = 1; i &lt;= 60; i ++) {</pre><pre>    minute += 1; {</pre><pre>    for (int j = 1; j &lt;= 60; j++){</pre><pre>        if (j == 30){</pre><pre>            continue OuterLoop;</pre><pre>        }</pre><pre>        second += 1;</pre><pre>        }</pre><pre>    }</pre><pre>}</pre>
+        <p>Note the presence of the continue statement, accompanied by the conditional <code>if(j == 30)</code>. Instead of counting 60 second increments, the inner loop counts only to 30, and the outer loop ticks off 30 second increments. This is also a good illustration of the way loops function in a general sense. The <code>if</code> statement is a boolean condition, right in the middle of nested for loops. Although it is hidden, its purpose is that of a sentinel, to control iteration of the inner loop. In fact, anywhere an <code>if</code> statement appears in a loop, we have a sentinel, setting conditions under which the loop will iterate. As noted previously, the function is similar to a <code>while</code> statement, only it appears in the body of the loop, not at the outset as in the <code>while</code> loop, nor at the conclusion as in the <code>do-while</code> loop. It is important to understand the logic of loops, not merely the syntax.</p>
+        <p>&#160;</p>
+    </body>
+</html>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultGlobalImportedFilesCache
+  SavedSource="file:///C:/Users/Andrew/Documents/My Projects/Chapter one/Output/Andrew/Temporary/GlobalImportedFilesSet v.1.xml">
+  <ImportedMap>
+    <Map
+      Local="../../Content/Chapter Three/Chapter Three.htm"
+      Remote="../Chapter three/Content/Chapter Three/Chapter Three.htm" />
+  </ImportedMap>
+  <SourceUrls>
+    <Url
+      Source="Project/Imports/Chapter three.flimpfl" />
+    <Url
+      Source="Project/Imports/Chapter two.flimpfl" />
+  </SourceUrls>
+</CatapultGlobalImportedFilesCache>
